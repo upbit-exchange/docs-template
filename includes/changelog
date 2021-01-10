@@ -1,0 +1,19 @@
+<h1 id='change-logs'>Change Logs</h1><h3 id='2021-01-10'>2021-01-10</h3>
+<p>Upbit Client Released: v1.1.6.11</p>
+
+<ul>
+<li><code>QUOTATION API</code> 관련 쿼리 파싱 부분 소스 코드 리팩토링</li>
+</ul>
+<h3 id='2021-01-08'>2021-01-08</h3>
+<p>Upbit Client Released: v1.1.6.10</p>
+
+<ul>
+<li><code>uuids</code> 및 <code>txids</code> 쿼리 파싱 추가 구현 및 배포</li>
+<li><code>identifiers</code> 쿼리 파싱 추가 구현 및 배포</li>
+</ul>
+<h3 id='2021-01-07'>2021-01-07</h3>
+<p>Upbit Client Released: v1.1.6.8</p>
+
+<ul>
+<li>Upbit OPEN API 버전이 1.1.6로 업데이트 되어 최신 버전에 맞춰 구현 및 배포</li>
+</ul>
