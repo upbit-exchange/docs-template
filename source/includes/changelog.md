@@ -1,5 +1,11 @@
 # Change Logs
 
+### 2021-01-12
+Upbit Client Released: v1.1.6.13
+
+- `setup.py` 소스 코드 리팩토링
+- [Python Upbit Client](https://github.com/uJhin/python-upbit-client) 저장소 생성 후 분기
+
 ### 2021-01-10
 Upbit Client Released: v1.1.6.12
 
