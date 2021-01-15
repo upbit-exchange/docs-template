@@ -16,6 +16,7 @@ includes:
   - Authentication
   - first
   - APIKey
+  - RequestLimits
   - Account
   - Market
   - Order
