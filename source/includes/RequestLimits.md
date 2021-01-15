@@ -54,6 +54,7 @@ Open API 호출 시 남아있는 요청 수는 `Remaining-Req` 응답 해더를 
 ### remaining_request (남은 요청 수 확인하기)
 
 > Example Code
+
 ```python
 from upbit.client import Upbit
 from upbit.client import remaining_request
@@ -67,7 +68,8 @@ remaining = remaining_request(result)
 print(remaining)
 ```
 
-> Result
+> Result Example
+
 ```json
 {
     "group": "default",
