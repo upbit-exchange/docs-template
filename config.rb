@@ -61,6 +61,3 @@ set :port, 4567
 helpers do
   require './lib/toc_data.rb'
 end
-
-config[:host] = "https://ujhin.github.io/upbit-client-docs"
-config[:ignore_sitemap_regex] = %r[\.(css|js|eot|svg|woff|ttf|png|jpg|jpeg|gif|keep)$]
