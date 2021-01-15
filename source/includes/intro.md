@@ -1,76 +1,9 @@
 # Intro (개요)
 
-<img src="/images/logo.png" width="250" height="250">
+**Upbit(업비트) Cryptocurrency Exchange Open API Client of Multi-Programming Language Support**
 
-**Upbit OPEN API Client 사용법과 설명에 대한 문서입니다.**
+Upbit Client(업비트 클라이언트)는 업비트 OPEN API에 접근할 수 있는 인터페이스를 제공합니다.
 
-<a href="https://github.com/uJhin/upbit-client/releases">
-  <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
-</a>
-<a href="https://github.com/uJhin/upbit-client/blob/main/LICENSE">
-  <img src="https://img.shields.io/github/license/uJhin/upbit-client"/>
-</a>
-
-### Referance
-
-<ul>
-  <li>
-    <b>
-      <a href="https://github.com/uJhin/upbit-client/">
-        <img src="/images/github.svg"/> GitHub Repository
-      </a>
-    </b>
-  </li>
-  <li>
-    <b>
-      <a href="https://github.com/uJhin/upbit-client/">
-        <img src="/images/github.svg"/> GitHub Repository for Python Package
-      </a>
-    </b>
-  </li>
-  <li>
-    <b>
-      <a href="https://pypi.org/project/upbit-client/">
-        <img src="/images/pypi.svg"/>
-        <img src="https://img.shields.io/pypi/v/upbit-client"/>
-      </a>
-    </b>
-  </li>
-  <li>
-    <b>
-      <a href="https://github.com/uJhin/upbit-client/issues/">
-        <img src="/images/github.svg"/>
-        <img src="https://img.shields.io/github/issues/uJhin/upbit-client"/>
-      </a>
-    </b>
-  </li>
-  <li>
-    <b>
-      <a href="https://github.com/uJhin/">
-        <img src="/images/github.svg"/> Author: uJhin
-      </a>
-    </b>
-  </li>
-  <li>
-    <b>
-      Author Email: <code>ujhin942@gmail.com</code>
-    </b>
-  </li>
-  <li>
-    <a href="https://docs.upbit.com/docs/">
-      <b>
-        <img src="/images/favicon.ico"/> Official OPEN API
-      </b>
-    </a>
-  </li>
-  <li>
-    <b>
-      <img src="/images/favicon.ico"/> Official Support: <code>open-api@upbit.com</code>
-    </b>
-  </li>
-</ul>
-
-
-### Donate
-- **BTC**: 3NVw2seiTQddGQwc1apqudKxuTqebpyL3s
-- **ETH**: 0x60dd373f59862d9df776596889b997e24bee42eb
+### Support
+- [Official Upbit OPEN API Documents](https://docs.upbit.com/)
+- [Swagger](https://github.com/swagger-api)

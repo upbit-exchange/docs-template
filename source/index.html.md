@@ -9,12 +9,14 @@ toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - intro
+  - main
   - changelog
-  - Authentication
+  - intro
   - install
+  - Authentication
   - first
   - APIKey
+  - RequestLimits
   - Account
   - Market
   - Order
