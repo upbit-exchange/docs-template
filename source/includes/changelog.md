@@ -2,6 +2,7 @@
 
 ### 2021-01-15
 Upbit Client Released: v1.1.6.15
+
 - 남은 요청 수 확인 기능 추가
 - 본 문서의 `remaining_request` 파트 참고
 
