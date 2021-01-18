@@ -1,5 +1,12 @@
 # Change Logs
 
+### 2021-01-18
+Upbit Client Released: v1.1.6.16
+
+- 유틸리티 모듈 `utils.py` 추가
+- 주문 가능한 가격 유닛을 검증하는 기능 추가
+- `validate_price` 함수 참고
+
 ### 2021-01-15
 Upbit Client Released: v1.1.6.15
 
