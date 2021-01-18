@@ -39,7 +39,7 @@ print(valid)
 ```
 
 
-#### validate_price(price)
+### validate_price(price)
 가격에 대한 값을 가격 단위에 맞춰 반환합니다.
 
 Parameter  | Description
@@ -47,7 +47,7 @@ Parameter  | Description
 price      | 가격
 
 
-#### result
+### result
 
 Parameter        | Description
 ---------------- | -----------
