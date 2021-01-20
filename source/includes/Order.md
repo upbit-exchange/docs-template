@@ -200,6 +200,8 @@ Parameters                         | Description
 ---------------------------------- | --------------------------------
 bid_fee                            | 매수 수수료 비율
 ask_fee                            | 매도 수수료 비율
+maker_bid_fee                      | 매수 시 메이커 수수료 비율
+maker_ask_fee                      | 매도 시 메이커 수수료 비율
 market                             | 마켓에 대한 정보
 market.id                          | 마켓 ID
 market.name                        | 마켓 이름
