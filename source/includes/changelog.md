@@ -1,5 +1,11 @@
 # Change Logs
 
+### 2021-01-22
+Update Upbit OPEN API
+
+- 주문 리스트 조회 (**GET** /v1/orders): `kind` 요청 파라미터 제거
+- 변경 결과: `normal` (일반 주문), `watch` (예약 주문) 동시 조회
+
 ### 2021-01-18
 Upbit Client Released: v1.1.6.16
 

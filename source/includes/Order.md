@@ -432,18 +432,6 @@ print(result)
 </tr>
 <tr>
   <td>
-      kind
-  </td>
-  <td>
-      주문 유형
-      <ul>
-        <li>normal: 일반 주문</li>
-        <li>watch: 예약 주문</li>
-      </ul>
-  </td>
-</tr>
-<tr>
-  <td>
       page
   </td>
   <td>
