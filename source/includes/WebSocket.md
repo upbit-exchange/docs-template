@@ -19,6 +19,7 @@ sock = UpbitWebSocket()
 웹 소켓 수신에 필요한 payload 데이터를 json 형식에 맞춰진 문자열로 generate 합니다.
 
 > Example Code
+
 ```python
 from upbit.websocket import UpbitWebSocket
 
@@ -28,6 +29,7 @@ print(payload)
 ```
 
 > Result
+
 ```python
 [{"ticket": "0e9a7960-4036-4cf3-abe6-c02712c3aad4"}, {"type": "trade", "codes": ["KRW-BTC", "KRW-ETH"]}, {"format": "DEFAULT"}]
 ```
@@ -48,6 +50,7 @@ format         | 포맷 (`SIMPLE`: 간소화된 필드명, `DEFAULT` (생략 가
 `type` 파라미터가 `orderbook`일 경우에 필요한 `codes` 파라미터를 요청 형식에 맞춰 generate 합니다.
 
 > Example Code
+
 ```python
 from upbit.websocket import UpbitWebSocket
 
@@ -58,6 +61,7 @@ print(codes)
 ```
 
 > Result
+
 ```python
 ["KRW-BTC.5", "KRW-ETH.5"]
 ```
@@ -74,6 +78,7 @@ counts         | 수신할 각 시세 종목에 대한 개수
 웹 소켓을 통해 시세 정보를 요청합니다.
 
 > Example Code
+
 ```python
 from upbit.websocket import UpbitWebSocket
 
@@ -87,6 +92,7 @@ print(result)
 ```
 
 > Result
+
 ```json
 {
     "type": "trade",
