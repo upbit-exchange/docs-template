@@ -40,6 +40,8 @@ print(valid)
 `20,007원`, `20,105원` 등의 가격으로는 주문이 불가능 합니다.
 
 ### validate_price(price)
+**staticmethod**
+
 가격에 대한 값을 가격 단위에 맞춰 반환합니다.
 
 Parameter  | Description
