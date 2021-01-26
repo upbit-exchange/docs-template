@@ -12,6 +12,72 @@ from upbit.websocket import UpbitWebSocket
 sock = UpbitWebSocket()
 ```
 
+### Parameters
+
+Parameter      | Description
+-------------- | --------------------
+uri            | 웹 소켓에 연결할 URI. (기본값: `wss://api.upbit.com/websocket/v1`)
+ping_interval  | ping 간격 제한 (기본값: `None`)
+ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
+
+
+## sock.Connection
+웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.
+
+> Example Code
+
+```python
+from upbit.websocket import UpbitWebSocket
+
+sock = UpbitWebSocket()
+
+async with sock.Connection as conn:
+    # Do Something
+    pass
+```
+
+### conn.send
+웹 소켓에 데이터를 수신합니다.
+
+> Example Code
+
+```python
+from upbit.websocket import UpbitWebSocket
+
+sock = UpbitWebSocket()
+
+async with sock.Connection as conn:
+    await conn.send('PING')
+```
+
+### conn.recv
+서버로부터 전달받은 바이트 스트림(bytes stream) 데이터를 받습니다.
+
+> Example Code
+
+```python
+import re
+import json
+from upbit.websocket import UpbitWebSocket
+
+sock = UpbitWebSocket()
+
+async with sock.Connection as conn:
+    await conn.send('PING')
+    data = await conn.recv()
+
+    pattern = re.compile('{"\S+":"\S+"}')
+    search = pattern.search(data.decode('utf8'))
+    result = json.loads(search.group())
+    print(result)
+```
+
+> Result
+
+```python
+{'status': 'UP'}
+```
+
 
 ## UpbitWebSocket.generate_payload (Payload Generate)
 **staticmethod**
@@ -31,7 +97,18 @@ print(payload)
 > Result
 
 ```python
-[{"ticket": "0e9a7960-4036-4cf3-abe6-c02712c3aad4"}, {"type": "trade", "codes": ["KRW-BTC", "KRW-ETH"]}, {"format": "DEFAULT"}]
+[
+    {
+        "ticket": "0e9a7960-4036-4cf3-abe6-c02712c3aad4"
+    },
+    {
+        "type": "trade",
+        "codes": ["KRW-BTC", "KRW-ETH"]
+    },
+    {
+        "format": "DEFAULT"
+    }
+]
 ```
 
 ### Parameters
@@ -39,11 +116,11 @@ print(payload)
 Parameter      | Description
 -------------- | --------------------
 ticket         | 식별값 (기본값은 `uuid4` 형식으로 생성)
-type           | 수신할 시세 타입 (현재가: `ticker`, 체결: `trade`, 호가: `orderbook`)
-codes          | 수신할 시세 종목 정보
-isOnlySnapshot | 시세 스냅샷만 제공 여부
-isOnlyRealtime | 실시간 시세만 제공 여부
-format         | 포맷 (`SIMPLE`: 간소화된 필드명, `DEFAULT` (생략 가능))
+type *         | 수신할 시세 타입 (현재가: `ticker`, 체결: `trade`, 호가: `orderbook`)
+codes *        | 수신할 시세 종목 정보 (ex. `['KRW-BTC', 'KRW-ETH']`)
+isOnlySnapshot | 시세 스냅샷만 제공 여부 (`True`, `False`)
+isOnlyRealtime | 실시간 시세만 제공 여부 (`True`, `False`)
+format         | 포맷, `SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본 포맷 (생략 가능)
 
 
 ## UpbitWebSocket.generate_orderbook_codes (Orderbook Codes Generate)
@@ -58,7 +135,8 @@ from upbit.websocket import UpbitWebSocket
 
 currencies = ["KRW-BTC", "KRW-ETH"]
 counts = [5, 5]
-codes = UpbitWebSocket.generate_orderbook_codes(currencies, counts)
+codes = UpbitWebSocket.generate_orderbook_codes(
+    currencies, counts)
 print(codes)
 ```
 
@@ -93,14 +171,15 @@ async def trade(sock, payload):
     async with sock.Connection as conn:
         await conn.send(payload)
         data = await conn.recv()
-        result = json.loads(data.decode('utf8')
+        result = json.loads(data.decode('utf8'))
         print(result)
 
 
 sock = UpbitWebSocket()
 
 currencies = ["KRW-BTC", "KRW-ETH"]
-payload = sock.generate_payload(type="trade", codes=currencies)
+payload = sock.generate_payload(
+    type="trade", codes=currencies)
 
 event_loop = asyncio.get_event_loop()
 event_loop.run_until_complete(trade(sock, payload))
