@@ -83,18 +83,27 @@ counts         | 수신할 각 시세 종목에 대한 개수
 
 ```python
 import json
+import asyncio
+
 from upbit.websocket import UpbitWebSocket
+
+
+# Definition async function
+async def trade(sock, payload):
+    async with sock.Connection as conn:
+        await conn.send(payload)
+        data = await conn.recv()
+        result = json.loads(data.decode('utf8')
+        print(result)
+
 
 sock = UpbitWebSocket()
 
 currencies = ["KRW-BTC", "KRW-ETH"]
 payload = sock.generate_payload(type="trade", codes=currencies)
 
-async with sock.Connection as conn:
-    await conn.send(payload)
-    data = await conn.recv()
-    result = json.loads(data.decode('utf8'))
-print(result)
+event_loop = asyncio.get_event_loop()
+event_loop.run_until_complete(trade(sock, payload))
 ```
 
 > Result
