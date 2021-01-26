@@ -22,8 +22,8 @@ ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
 
 
 ## sock.Connection
-
 **Property**
+
 웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.
 
 > Example Code
