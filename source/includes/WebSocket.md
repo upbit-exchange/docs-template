@@ -47,6 +47,8 @@ format         | 포맷 (`SIMPLE`: 간소화된 필드명, `DEFAULT` (생략 가
 
 
 ## UpbitWebSocket.generate_orderbook_codes (Orderbook Codes Generate)
+**staticmethod**
+
 `type` 파라미터가 `orderbook`일 경우에 필요한 `codes` 파라미터를 요청 형식에 맞춰 generate 합니다.
 
 > Example Code
