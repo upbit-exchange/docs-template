@@ -2,7 +2,7 @@
 
 
 ### 2021-01-26
-Update Client Released: v1.1.6.22
+Update Client Released: v1.1.6.23
 
 - 모든 `response`에 요청 제한 수가 출력되도록 수정
 - 웹 소켓(Web Socket) 클라이언트 모듈 추가

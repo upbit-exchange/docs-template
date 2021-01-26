@@ -76,7 +76,7 @@ currencies     | 수신할 시세 종목들
 counts         | 수신할 각 시세 종목에 대한 개수
 
 
-## request (시세 정보 요청하기)
+## Request (시세 정보 요청하기)
 웹 소켓을 통해 시세 정보를 요청합니다.
 
 > Example Code
@@ -89,7 +89,10 @@ sock = UpbitWebSocket()
 currencies = ["KRW-BTC", "KRW-ETH"]
 payload = sock.generate_payload(type="trade", codes=currencies)
 
-result = await sock.request(payload)
+async with sock.Connection as conn:
+    await conn.send(payload)
+    data = await conn.recv()
+    result = json.loads(data.decode('utf8'))
 print(result)
 ```
 
