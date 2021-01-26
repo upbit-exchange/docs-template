@@ -2,10 +2,12 @@
 
 
 ### 2021-01-26
-Update Client Released: v1.1.6.21
+Update Client Released: v1.1.6.22
 
 - 모든 `response`에 요청 제한 수가 출력되도록 수정
-- 전체적인 소스 코드 리팩토링
+- 웹 소켓(Web Socket) 클라이언트 모듈 추가
+- `UpbitWebSocket` 항목 참고
+- 그 외 전체적인 소스 코드 리팩토링
 
 ### 2021-01-22
 Update Upbit OPEN API
