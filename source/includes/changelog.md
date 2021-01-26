@@ -1,6 +1,12 @@
 # Change Logs
 
 
+### 2021-01-27
+Update Client Released: v1.1.6.25
+
+- 웹 소켓(Web Socket) 연결 끊김 문제 해결
+- UpbitWebSocket 클래스에 ping 관리를 위한 `ping_interval` 및 `ping_timeout` 파라미터 추가
+
 ### 2021-01-26
 Update Client Released: v1.1.6.23
 
