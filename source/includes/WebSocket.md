@@ -82,6 +82,7 @@ counts         | 수신할 각 시세 종목에 대한 개수
 > Example Code
 
 ```python
+import json
 from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
