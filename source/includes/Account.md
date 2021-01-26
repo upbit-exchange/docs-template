@@ -12,7 +12,7 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Account.Account_info().result()
+result = client.Account.Account_info()['result']
 print(result)
 ```
 
@@ -82,7 +82,7 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Account.Account_wallet().result()
+result = client.Account.Account_wallet()['result']
 print(result)
 ```
 

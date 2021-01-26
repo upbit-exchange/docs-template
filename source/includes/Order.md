@@ -11,7 +11,7 @@ from upbit.client import Upbit
 client = Upbit()
 result = client.Order.Order_orderbook(
     markets=['KRW-BTC', 'KRW-ETH']
-).result()
+)['result']
 print(result)
 ```
 
@@ -128,7 +128,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Order.Order_chance(
     market='KRW-BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -247,7 +247,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Order.Order_info(
     uuid='9ca023a5-851b-4fec-9f0a-48cd83c2eaae'
-).result()
+)['result']
 print(result)
 ```
 
@@ -339,7 +339,7 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Order.Order_info_all().result()
+result = client.Order.Order_info_all()['result']
 print(result)
 ```
 
@@ -499,7 +499,7 @@ result = client.Order.Order_new(
     volume='0.01',
     price='100.0',
     ord_type='limit'
-).result()
+)['result']
 print(result)
 ```
 
@@ -671,7 +671,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Order.Order_cancel(
     uuid='cdd92199-2897-4e14-9448-f923320408ad'
-).result()
+)['result']
 print(result)
 ```
 

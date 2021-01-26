@@ -12,7 +12,7 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_info_all().result()
+result = client.Deposit.Deposit_info_all()['result']
 print(result)
 ```
 
@@ -246,7 +246,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Deposit.Deposit_info(
     uuid='20c84493-6e70-4e54-83ce-90915a19d110'
-).result()
+)['result']
 print(result)
 ```
 
@@ -423,7 +423,7 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_coin_addresses().result()
+result = client.Deposit.Deposit_coin_addresses()['result']
 print(result)
 ```
 
@@ -494,7 +494,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Deposit.Deposit_coin_address(
     currency='BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -549,7 +549,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Deposit.Deposit_generate_coin_address(
     currency='SNT'
-).result()
+)['result']
 print(result)
 ```
 

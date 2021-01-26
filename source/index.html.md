@@ -14,9 +14,9 @@ includes:
   - intro
   - install
   - Authentication
+  - RequestLimits
   - first
   - APIKey
-  - RequestLimits
   - Account
   - Market
   - Order
@@ -24,7 +24,6 @@ includes:
   - Withdraw
   - Candle
   - Trade
-  - Utils
   - errors
 
 search: true

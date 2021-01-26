@@ -11,7 +11,7 @@ from upbit.client import Upbit
 client = Upbit()
 result = client.Trade.Trade_ticks(
     market='KRW-BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -82,7 +82,7 @@ from upbit.client import Upbit
 client = Upbit()
 result = client.Trade.Trade_ticker(
     markets='KRW-BTC, KRW-ETH'
-).result()
+)['result']
 print(result)
 ```
 

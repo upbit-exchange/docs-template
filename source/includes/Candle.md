@@ -12,7 +12,7 @@ client = Upbit()
 result = client.Candle.Candle_minutes(
     unit=1,
     market='KRW-BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -80,7 +80,7 @@ from upbit.client import Upbit
 client = Upbit()
 result = client.Candle.Candle_days(
     market='KRW-BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -152,7 +152,7 @@ from upbit.client import Upbit
 client = Upbit()
 result = client.Candle.Candle_weeks(
     market='KRW-BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -219,7 +219,7 @@ from upbit.client import Upbit
 client = Upbit()
 result = client.Candle.Candle_month(
     market='KRW-BTC'
-).result()
+)['result']
 print(result)
 ```
 

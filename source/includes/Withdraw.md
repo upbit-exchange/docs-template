@@ -12,7 +12,7 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Withdraw.Withdraw_info_all().result()
+result = client.Withdraw.Withdraw_info_all()['result']
 print(result)
 ```
 
@@ -236,7 +236,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Withdraw.Withdraw_info(
     uuid='35a4f1dc-1db5-4d6b-89b5-7ec137875956'
-).result()
+)['result']
 print(result)
 ```
 
@@ -415,7 +415,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Withdraw.Withdraw_chance(
     currency='BTC'
-).result()
+)['result']
 print(result)
 ```
 
@@ -531,7 +531,7 @@ result = client.Withdraw.Withdraw_coin(
     currency='BTC',
     amount='0.01',
     address='3NVw2seiTQddGQwc1apqudKxuTqebpyL3s'
-).result()
+)['result']
 print(result)
 ```
 
@@ -735,7 +735,7 @@ secret_key = "Your Secret Key"
 client = Upbit(access_key, secret_key)
 result = client.Withdraw.Withdraw_krw(
     amount='10000'
-).result()
+)['result']
 print(result)
 ```
 

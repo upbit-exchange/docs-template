@@ -1,5 +1,12 @@
 # Change Logs
 
+
+### 2021-01-26
+Update Client Released: v1.1.6.20
+
+- 모든 `response`에 요청 제한 수가 출력되도록 수정
+- 전체적인 소스 코드 리팩토링
+
 ### 2021-01-22
 Update Upbit OPEN API
 

@@ -51,45 +51,32 @@ Open API 호출 시 남아있는 요청 수는 `Remaining-Req` 응답 해더를 
 </aside>
 
 
-### remaining_request (남은 요청 수 확인하기)
+### 남은 요청 수 확인하기
+
+모든 결과는 `json` 형식으로 반환되며, `remaining_request` 키값을 가집니다.
 
 > Example Code
 
 ```python
 from upbit.client import Upbit
-from upbit.client import remaining_request
 
 access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
 result = client.APIKey.APIKey_info()
-remaining = remaining_request(result)
-print(remaining)
+print(result)
 ```
 
 > Result Example
 
 ```json
 {
+  "remaining_request": {
     "group": "default",
     "min": "899",
     "sec": "29"
+},
+  "result": ...
 }
 ```
-
-### remaining_request(result)
-현재 남은 요청 횟수를 반환합니다.
-
-Parameter  | Description
----------- | -----------
-result     | HttpFuture
-
-
-### result
-
-Parameter  | Description
----------- | -----------
-group      | 요청 그룹 (`default`: 기본 서비스, `order`: 주문)
-min        | 남은 시간; 분(minutes)
-sec        | 남은 시간; 초(seconds)
