@@ -22,6 +22,8 @@ ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
 
 
 ## sock.Connection
+
+**Property**
 웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.
 
 > Example Code
@@ -36,7 +38,8 @@ async with sock.Connection as conn:
     pass
 ```
 
-### conn.send
+
+## conn.send
 웹 소켓에 데이터를 수신합니다.
 
 > Example Code
@@ -50,7 +53,14 @@ async with sock.Connection as conn:
     await conn.send('PING')
 ```
 
-### conn.recv
+### Parameters
+
+Parameter      | Description
+-------------- | --------------------
+message        | 서버에 수신할 데이터
+
+
+## conn.recv
 서버로부터 전달받은 바이트 스트림(bytes stream) 데이터를 받습니다.
 
 > Example Code
@@ -77,6 +87,10 @@ async with sock.Connection as conn:
 ```python
 {'status': 'UP'}
 ```
+
+### Parameters
+
+No Parameters
 
 
 ## UpbitWebSocket.generate_payload (Payload Generate)
