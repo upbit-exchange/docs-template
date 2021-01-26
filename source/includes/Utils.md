@@ -1,6 +1,8 @@
 # Utils (유틸리티 모듈)
 
-## 원화 마켓 주문 가격 단위
+## Validator
+
+### 원화 마켓 주문 가격 단위
 
 원화 마켓은 호가 별 주문 가격의 단위가 다릅니다. 아래 표를 참고하여 해당 단위로 주문하여 주세요.
 
@@ -25,10 +27,10 @@
 > Example Code
 
 ```python
-from upbit.utils import validate_price
+from upbit.utils import Validator
 
 price = 20007
-valid = validate_price(price)
+valid = Validator.validate_price(price)
 print(valid)
 ```
 
@@ -39,7 +41,7 @@ print(valid)
 ```
 
 
-### validate_price(price)
+#### validate_price(price)
 가격에 대한 값을 가격 단위에 맞춰 반환합니다.
 
 Parameter  | Description
@@ -47,7 +49,7 @@ Parameter  | Description
 price      | 가격
 
 
-### result
+#### result
 
 Parameter        | Description
 ---------------- | -----------

@@ -24,6 +24,7 @@ includes:
   - Withdraw
   - Candle
   - Trade
+  - Utils
   - errors
 
 search: true
