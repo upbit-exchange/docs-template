@@ -16,7 +16,7 @@ print(valid)
 
 > Result Example
 
-```console
+```python
 20000.0
 ```
 
@@ -46,7 +46,7 @@ print(valid)
 
 Parameter  | Description
 ---------- | -----------
-price      | 가격
+price *    | 가격
 
 
 ### result
