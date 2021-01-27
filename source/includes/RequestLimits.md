@@ -15,7 +15,7 @@
 - (업데이트) 주문 API와 주문 외 API 요청 수 제한은 별도로 계산 됩니다.
 
 ### QUOTATION API
-#### Websocket 연결 요청 수 제한
+#### 웹 소켓(Websocket) 연결 요청 수 제한
 `초당 5회`, `분당 100회`
 
 #### REST API 요청 수 제한
