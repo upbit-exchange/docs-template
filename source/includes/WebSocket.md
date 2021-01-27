@@ -167,8 +167,8 @@ async with sock.Connection as conn:
 
 > Result
 
-```python
-{'status': 'UP'}
+```json
+{"status": "UP"}
 ```
 
 ### conn.recv()
@@ -195,7 +195,7 @@ print(payload)
 
 > Result
 
-```python
+```json
 [
     {
         "ticket": "0e9a7960-4036-4cf3-abe6-c02712c3aad4"
@@ -241,7 +241,7 @@ print(codes)
 
 > Result
 
-```python
+```json
 ["KRW-BTC.5", "KRW-ETH.5"]
 ```
 
