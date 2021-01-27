@@ -1,5 +1,5 @@
 # UpbitClient (Upbit 클라이언트 사용하기)
-## 클라이언트 객체 생성
+### 클라이언트 객체 생성
 
 > Code Example
 
@@ -33,15 +33,13 @@ spec_uri   | Swagger Mapping JSON Path
 config     | Swagger Client Configuration
 
 
-## 결과
+### 결과
 
 모든 요청에 대한 결과는 JSON 포맷으로 반환됩니다.
 
 남은 요청 제한 시간에 대한 `remaining_request`와 응답 결과 `result`의 키(key) 값을 가집니다.
 
 요청 제한에 대한 부분은 `Remaining Requests (요청 수 제한)` 섹션에서 다룹니다.
-
-### Result
 
 Parameter         | Description
 ----------------  | ------------------
