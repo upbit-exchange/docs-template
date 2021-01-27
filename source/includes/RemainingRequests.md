@@ -1,4 +1,35 @@
-# Request Limits (요청 수 제한)
+# Remaining Requests (요청 수 제한)
+## 남은 요청 수 확인하기
+
+UpbitClient 사용 시 모든 결과는 `json` 포맷으로 반환되며, `remaining_request` 키값을 가집니다.
+
+> Example Code
+
+```python
+from upbit.client import Upbit
+
+access_key = "Your Access Key"
+secret_key = "Your Secret Key"
+
+client = Upbit(access_key, secret_key)
+result = client.APIKey.APIKey_info()
+print(result)
+```
+
+> Result Example
+
+```json
+{
+  "remaining_request": {
+    "group": "default",
+    "min": "899",
+    "sec": "29"
+},
+  "result": ...
+}
+```
+
+## 상세 설명
 
 ### EXCHANGE API
 **주문**
@@ -53,34 +84,3 @@ Open API 호출 시 남아있는 요청 수는 `Remaining-Req` 응답 해더를 
 <aside class="notice">
   <b>NOTE</b>: 해당 시간 내 초과된 요청에 대해서 <code>429 Too Many   Requests</code> 오류가 발생할 수 있습니다. 하지만 별도의 추가적인   페널티는 부과되지 않습니다.
 </aside>
-
-
-### 남은 요청 수 확인하기
-
-모든 결과는 `json` 형식으로 반환되며, `remaining_request` 키값을 가집니다.
-
-> Example Code
-
-```python
-from upbit.client import Upbit
-
-access_key = "Your Access Key"
-secret_key = "Your Secret Key"
-
-client = Upbit(access_key, secret_key)
-result = client.APIKey.APIKey_info()
-print(result)
-```
-
-> Result Example
-
-```json
-{
-  "remaining_request": {
-    "group": "default",
-    "min": "899",
-    "sec": "29"
-},
-  "result": ...
-}
-```

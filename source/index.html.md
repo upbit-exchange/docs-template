@@ -14,7 +14,7 @@ includes:
   - intro
   - install
   - Authentication
-  - RequestLimits
+  - RemainingRequests
   - first
   - APIKey
   - Account
