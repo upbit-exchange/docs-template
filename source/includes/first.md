@@ -12,10 +12,10 @@ client = Upbit(access_key, secret_key)
 print(client)
 ```
 
-> Result Example
+> Result
 
-```console
-UpbitClient(https://api.upbit.com/v1)
+```python
+UpbitClient(https://api.upbit.com/)
 ```
 
 설치가 완료되면 `from upbit.client import Upbit`로 패키지를 import 합니다.

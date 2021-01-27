@@ -12,7 +12,7 @@ from upbit.websocket import UpbitWebSocket
 sock = UpbitWebSocket()
 ```
 
-### Parameters
+### UpbitWebSocket(uri=WEBSOCKET_URI, ping_interval=None, ping_timeout=None)
 
 Parameter      | Description
 -------------- | --------------------
@@ -53,11 +53,11 @@ async with sock.Connection as conn:
     await conn.send('PING')
 ```
 
-### Parameters
+### conn.send(message)
 
 Parameter      | Description
 -------------- | --------------------
-message        | 서버에 수신할 데이터
+message *      | 서버에 수신할 데이터
 
 
 ## conn.recv
@@ -88,7 +88,7 @@ async with sock.Connection as conn:
 {'status': 'UP'}
 ```
 
-### Parameters
+### conn.recv()
 
 No Parameters
 
@@ -125,7 +125,7 @@ print(payload)
 ]
 ```
 
-### Parameters
+### UpbitWebSocket.generate_payload(type, codes, isOnlySnapshot=None, isOnlyRealtime=None, ticket=None, format='DEFAULT')
 
 Parameter      | Description
 -------------- | --------------------
@@ -160,15 +160,15 @@ print(codes)
 ["KRW-BTC.5", "KRW-ETH.5"]
 ```
 
-### Parameters
+### UpbitWebSocket.generate_orderbook_codes(currencies, counts=None)
 
 Parameter      | Description
 -------------- | --------------------
-currencies     | 수신할 시세 종목들
+currencies *   | 수신할 시세 종목들
 counts         | 수신할 각 시세 종목에 대한 개수
 
 
-## Request (시세 정보 요청하기)
+## 웹 소켓으로 시세 정보 요청하기
 웹 소켓을 통해 시세 정보를 요청합니다.
 
 > Example Code
@@ -220,11 +220,11 @@ event_loop.run_until_complete(trade(sock, payload))
 }
 ```
 
-### Parameters
+### Request Parameters
 
 Parameter      | Description
 -------------- | --------------------
-payload        | 요청 데이터
+payload        | 포맷에 맞춰진 요청 데이터
 
 
 ### Response
