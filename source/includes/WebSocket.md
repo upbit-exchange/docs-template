@@ -10,6 +10,10 @@
 from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
+
+async with sock as conn:
+    # Do something
+    pass
 ```
 
 ### UpbitWebSocket(uri=WEBSOCKET_URI, ping_interval=None, ping_timeout=None)
@@ -21,10 +25,12 @@ ping_interval  | ping 간격 제한 (기본값: `None`)
 ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
 
 
-## sock.Connection
+## socket.Connection
 **Property**
 
 웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.
+
+위의 예제와 동일한 결과를 가질 수 있습니다.
 
 > Example Code
 
@@ -32,8 +38,9 @@ ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
 from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
+connection = sock.Connection
 
-async with sock.Connection as conn:
+async with connection as conn:
     # Do Something
     pass
 ```
@@ -49,7 +56,7 @@ from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
 
-async with sock.Connection as conn:
+async with sock as conn:
     await conn.send('PING')
 ```
 
@@ -182,7 +189,7 @@ from upbit.websocket import UpbitWebSocket
 
 # Definition async function
 async def trade(sock, payload):
-    async with sock.Connection as conn:
+    async with sock as conn:
         await conn.send(payload)
         data = await conn.recv()
         result = json.loads(data.decode('utf8'))
