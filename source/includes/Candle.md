@@ -9,11 +9,11 @@
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Candle.Candle_minutes(
+resp = client.Candle.Candle_minutes(
     unit=1,
     market='KRW-BTC'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -78,10 +78,10 @@ unit                    | 분 단위 (유닛)
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Candle.Candle_days(
+resp = client.Candle.Candle_days(
     market='KRW-BTC'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -150,10 +150,10 @@ converted_trade_price   | 종가 환산 화폐 단위로 환산된 가격(요청
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Candle.Candle_weeks(
+resp = client.Candle.Candle_weeks(
     market='KRW-BTC'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -217,10 +217,10 @@ first_day_of_period     | 캔들 기간의 가장 첫 날
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Candle.Candle_month(
+resp = client.Candle.Candle_month(
     market='KRW-BTC'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example

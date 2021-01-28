@@ -9,8 +9,8 @@
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Market.Market_info_all()['result']
-print(result)
+resp = client.Market.Market_info_all()
+print(resp['result'])
 ```
 
 > Response Example

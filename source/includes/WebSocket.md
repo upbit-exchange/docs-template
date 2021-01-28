@@ -162,8 +162,8 @@ async with sock.Connection as conn:
 
     pattern = re.compile('{"\S+":"\S+"}')
     search = pattern.search(data.decode('utf8'))
-    result = json.loads(search.group())
-    print(result)
+    resp = json.loads(search.group())
+    print(resp['result'])
 ```
 
 > Result
@@ -271,8 +271,8 @@ async def trade(sock, payload):
     async with sock as conn:
         await conn.send(payload)
         data = await conn.recv()
-        result = json.loads(data.decode('utf8'))
-        print(result)
+        resp = json.loads(data.decode('utf8'))
+        print(resp['result'])
 
 
 sock = UpbitWebSocket()

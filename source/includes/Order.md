@@ -9,10 +9,10 @@
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Order.Order_orderbook(
+resp = client.Order.Order_orderbook(
     markets=['KRW-BTC', 'KRW-ETH']
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -126,10 +126,10 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Order.Order_chance(
+resp = client.Order.Order_chance(
     market='KRW-BTC'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -245,10 +245,10 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Order.Order_info(
+resp = client.Order.Order_info(
     uuid='9ca023a5-851b-4fec-9f0a-48cd83c2eaae'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -339,8 +339,8 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Order.Order_info_all()['result']
-print(result)
+resp = client.Order.Order_info_all()
+print(resp['result'])
 ```
 
 > Response Example
@@ -493,14 +493,14 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Order.Order_new(
+resp = client.Order.Order_new(
     market='KRW-BTC',
     side='bid',
     volume='0.01',
     price='100.0',
     ord_type='limit'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -669,10 +669,10 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Order.Order_cancel(
+resp = client.Order.Order_cancel(
     uuid='cdd92199-2897-4e14-9448-f923320408ad'
-)['result']
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
