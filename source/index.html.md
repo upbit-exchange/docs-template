@@ -13,9 +13,9 @@ includes:
   - changelog
   - intro
   - install
+  - first
   - Authentication
   - RemainingRequests
-  - first
   - APIKey
   - Account
   - Market
