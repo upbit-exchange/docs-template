@@ -13,10 +13,10 @@ includes:
   - changelog
   - intro
   - install
-  - Authentication
   - first
+  - Authentication
+  - RemainingRequests
   - APIKey
-  - RequestLimits
   - Account
   - Market
   - Order
@@ -24,6 +24,7 @@ includes:
   - Withdraw
   - Candle
   - Trade
+  - WebSocket
   - Utils
   - errors
 

@@ -1,5 +1,26 @@
 # Change Logs
 
+
+### 2021-01-27
+Update Client Released: v1.1.6.25
+
+- 웹 소켓(Web Socket) 연결 끊김 문제 해결
+- UpbitWebSocket 클래스에 ping 관리를 위한 `ping_interval` 및 `ping_timeout` 파라미터 추가
+
+### 2021-01-26
+Update Client Released: v1.1.6.23
+
+- 모든 `response`에 요청 제한 수가 출력되도록 수정
+- 웹 소켓(Web Socket) 클라이언트 모듈 추가
+- `UpbitWebSocket` 항목 참고
+- 그 외 전체적인 소스 코드 리팩토링
+
+### 2021-01-22
+Update Upbit OPEN API
+
+- 주문 리스트 조회 (**GET** /v1/orders): `kind` 요청 파라미터 제거
+- 변경 결과: `normal` (일반 주문), `watch` (예약 주문) 동시 조회
+
 ### 2021-01-18
 Upbit Client Released: v1.1.6.16
 

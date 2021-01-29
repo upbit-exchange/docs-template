@@ -12,8 +12,8 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_info_all().result()
-print(result)
+resp = client.Deposit.Deposit_info_all()
+print(resp['result'])
 ```
 
 > Response Example
@@ -244,10 +244,10 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_info(
+resp = client.Deposit.Deposit_info(
     uuid='20c84493-6e70-4e54-83ce-90915a19d110'
-).result()
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -423,8 +423,8 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_coin_addresses().result()
-print(result)
+resp = client.Deposit.Deposit_coin_addresses()
+print(resp['result'])
 ```
 
 > Response Example
@@ -492,10 +492,10 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_coin_address(
+resp = client.Deposit.Deposit_coin_address(
     currency='BTC'
-).result()
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -547,10 +547,10 @@ access_key = "Your Access Key"
 secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
-result = client.Deposit.Deposit_generate_coin_address(
+resp = client.Deposit.Deposit_generate_coin_address(
     currency='SNT'
-).result()
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response1 Example: 201 Created

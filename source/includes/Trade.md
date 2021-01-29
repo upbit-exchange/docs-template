@@ -9,10 +9,10 @@
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Trade.Trade_ticks(
+resp = client.Trade.Trade_ticks(
     market='KRW-BTC'
-).result()
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
@@ -80,10 +80,10 @@ sequential_id      | 체결 번호 (Unique)
 from upbit.client import Upbit
 
 client = Upbit()
-result = client.Trade.Trade_ticker(
+resp = client.Trade.Trade_ticker(
     markets='KRW-BTC, KRW-ETH'
-).result()
-print(result)
+)
+print(resp['result'])
 ```
 
 > Response Example
