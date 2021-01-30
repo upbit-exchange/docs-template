@@ -162,8 +162,8 @@ async with sock.Connection as conn:
 
     pattern = re.compile('{"\S+":"\S+"}')
     search = pattern.search(data.decode('utf8'))
-    resp = json.loads(search.group())
-    print(resp['result'])
+    result = json.loads(search.group())
+    print(result)
 ```
 
 > Result
@@ -267,41 +267,62 @@ from upbit.websocket import UpbitWebSocket
 
 
 # Definition async function
-async def trade(sock, payload):
+async def ticker(sock, payload):
     async with sock as conn:
         await conn.send(payload)
         data = await conn.recv()
-        resp = json.loads(data.decode('utf8'))
-        print(resp['result'])
+        result = json.loads(data.decode('utf8'))
+        print(result)
 
 
 sock = UpbitWebSocket()
 
 currencies = ["KRW-BTC", "KRW-ETH"]
 payload = sock.generate_payload(
-    type="trade", codes=currencies)
+    type="ticker", codes=currencies)
 
 event_loop = asyncio.get_event_loop()
-event_loop.run_until_complete(trade(sock, payload))
+event_loop.run_until_complete(ticker(sock, payload))
 ```
 
 > Result
 
 ```json
 {
-    "type": "trade",
+    "type": "ticker",
     "code": "KRW-BTC",
-    "timestamp": 1611656099678,
-    "trade_date": "2021-01-26",
-    "trade_time": "10:14:59",
-    "trade_timestamp": 1611656099000,
-    "trade_price": 35785000.0,
-    "trade_volume": 0.00533827,
+    "opening_price": 36631000.0,
+    "high_price": 41072000.0,
+    "low_price": 35514000.0,
+    "trade_price": 40334000.0,
+    "prev_closing_price": 36624000.0,
+    "acc_trade_price": 948695315919.5629,
+    "change": "RISE",
+    "change_price": 3710000.0,
+    "signed_change_price": 3710000.0,
+    "change_rate": 0.1012996942,
+    "signed_change_rate": 0.1012996942,
     "ask_bid": "ASK",
-    "prev_closing_price": 36054000.0,
-    "change": "FALL",
-    "change_price": 269000.0,
-    "sequential_id": 1611656099000000,
+    "trade_volume": 0.00034,
+    "acc_trade_volume": 24619.8580828,
+    "trade_date": "20210129",
+    "trade_time": "134357",
+    "trade_timestamp": 1611927837000,
+    "acc_ask_volume": 12338.81810342,
+    "acc_bid_volume": 12281.03997938,
+    "highest_52_week_price": 48550000.0,
+    "highest_52_week_date": "2021-01-08",
+    "lowest_52_week_price": 5489000.0,
+    "lowest_52_week_date": "2020-03-13",
+    "trade_status": null,
+    "market_state": "ACTIVE",
+    "market_state_for_ios": null,
+    "is_trading_suspended": false,
+    "delisting_date": null,
+    "market_warning": "NONE",
+    "timestamp": 1611927837199,
+    "acc_trade_price_24h": 1136158886247.1484,
+    "acc_trade_volume_24h": 29771.6060012,
     "stream_type": "SNAPSHOT"
 }
 ```

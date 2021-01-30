@@ -13,7 +13,7 @@ secret_key = "Your Secret Key"
 
 client = Upbit(access_key, secret_key)
 resp = client.APIKey.APIKey_info()
-print(resp['result'])
+print(resp)
 ```
 
 > Result Example
