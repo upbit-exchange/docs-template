@@ -107,7 +107,7 @@ ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
 
 웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.
 
-위의 예제와 동일한 결과를 가질 수 있습니다.
+위의 예제와 동일한 결과를 가집니다.
 
 > Example Code
 
@@ -156,7 +156,7 @@ from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
 
-async with sock.Connection as conn:
+async with sock as conn:
     await conn.send('PING')
     data = await conn.recv()
 
@@ -189,8 +189,11 @@ No Parameters
 ```python
 from upbit.websocket import UpbitWebSocket
 
-currencies = ["KRW-BTC", "KRW-ETH"]
-payload = UpbitWebSocket.generate_payload(type="trade", codes=currencies)
+currencies = ['KRW-BTC', 'KRW-ETH']
+payload = UpbitWebSocket.generate_payload(
+    type="trade",
+    codes=currencies
+)
 print(payload)
 ```
 
@@ -233,10 +236,12 @@ format         | 포맷, `SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본 포
 ```python
 from upbit.websocket import UpbitWebSocket
 
-currencies = ["KRW-BTC", "KRW-ETH"]
+currencies = ['KRW-BTC', 'KRW-ETH']
 counts = [5, 5]
 codes = UpbitWebSocket.generate_orderbook_codes(
-    currencies, counts)
+    currencies,
+    counts
+)
 print(codes)
 ```
 
@@ -279,9 +284,11 @@ async def ticker(sock, payload):
 
 sock = UpbitWebSocket()
 
-currencies = ["KRW-BTC", "KRW-ETH"]
+currencies = ['KRW-BTC', 'KRW-ETH']
 payload = sock.generate_payload(
-    type="ticker", codes=currencies)
+    type='ticker',
+    codes=currencies
+)
 
 event_loop = asyncio.get_event_loop()
 event_loop.run_until_complete(ticker(sock, payload))
