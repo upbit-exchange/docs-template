@@ -107,7 +107,7 @@ ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
 
 웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.
 
-위의 예제와 동일한 결과를 가질 수 있습니다.
+위의 예제와 동일한 결과를 가집니다.
 
 > Example Code
 
@@ -156,7 +156,7 @@ from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
 
-async with sock.Connection as conn:
+async with sock as conn:
     await conn.send('PING')
     data = await conn.recv()
 
@@ -189,8 +189,11 @@ No Parameters
 ```python
 from upbit.websocket import UpbitWebSocket
 
-currencies = ["KRW-BTC", "KRW-ETH"]
-payload = UpbitWebSocket.generate_payload(type="trade", codes=currencies)
+currencies = ['KRW-BTC', 'KRW-ETH']
+payload = UpbitWebSocket.generate_payload(
+    type="trade",
+    codes=currencies
+)
 print(payload)
 ```
 
@@ -233,10 +236,12 @@ format         | 포맷, `SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본 포
 ```python
 from upbit.websocket import UpbitWebSocket
 
-currencies = ["KRW-BTC", "KRW-ETH"]
+currencies = ['KRW-BTC', 'KRW-ETH']
 counts = [5, 5]
 codes = UpbitWebSocket.generate_orderbook_codes(
-    currencies, counts)
+    currencies,
+    counts
+)
 print(codes)
 ```
 
@@ -269,17 +274,21 @@ from upbit.websocket import UpbitWebSocket
 # Definition async function
 async def ticker(sock, payload):
     async with sock as conn:
-        await conn.send(payload)
-        data = await conn.recv()
-        result = json.loads(data.decode('utf8'))
-        print(result)
+        while True:
+            await conn.send(payload)
+            recv = await conn.recv()
+            data = recv.decode('utf8')
+            result = json.loads(data)
+            print(result)
 
 
 sock = UpbitWebSocket()
 
-currencies = ["KRW-BTC", "KRW-ETH"]
+currencies = ['KRW-BTC', 'KRW-ETH']
 payload = sock.generate_payload(
-    type="ticker", codes=currencies)
+    type='ticker',
+    codes=currencies
+)
 
 event_loop = asyncio.get_event_loop()
 event_loop.run_until_complete(ticker(sock, payload))
@@ -291,25 +300,25 @@ event_loop.run_until_complete(ticker(sock, payload))
 {
     "type": "ticker",
     "code": "KRW-BTC",
-    "opening_price": 36631000.0,
-    "high_price": 41072000.0,
-    "low_price": 35514000.0,
-    "trade_price": 40334000.0,
-    "prev_closing_price": 36624000.0,
-    "acc_trade_price": 948695315919.5629,
+    "opening_price": 36408000.0,
+    "high_price": 38161000.0,
+    "low_price": 35907000.0,
+    "trade_price": 36784000.0,
+    "prev_closing_price": 36408000.0,
+    "acc_trade_price": 466420626861.1874,
     "change": "RISE",
-    "change_price": 3710000.0,
-    "signed_change_price": 3710000.0,
-    "change_rate": 0.1012996942,
-    "signed_change_rate": 0.1012996942,
-    "ask_bid": "ASK",
-    "trade_volume": 0.00034,
-    "acc_trade_volume": 24619.8580828,
-    "trade_date": "20210129",
-    "trade_time": "134357",
-    "trade_timestamp": 1611927837000,
-    "acc_ask_volume": 12338.81810342,
-    "acc_bid_volume": 12281.03997938,
+    "change_price": 376000.0,
+    "signed_change_price": 376000.0,
+    "change_rate": 0.0103274006,
+    "signed_change_rate": 0.0103274006,
+    "ask_bid": "BID",
+    "trade_volume": 0.004996,
+    "acc_trade_volume": 12633.27063535,
+    "trade_date": "20210201",
+    "trade_time": "192943",
+    "trade_timestamp": 1612207783000,
+    "acc_ask_volume": 6355.28646728,
+    "acc_bid_volume": 6277.98416807,
     "highest_52_week_price": 48550000.0,
     "highest_52_week_date": "2021-01-08",
     "lowest_52_week_price": 5489000.0,
@@ -320,9 +329,46 @@ event_loop.run_until_complete(ticker(sock, payload))
     "is_trading_suspended": false,
     "delisting_date": null,
     "market_warning": "NONE",
-    "timestamp": 1611927837199,
-    "acc_trade_price_24h": 1136158886247.1484,
-    "acc_trade_volume_24h": 29771.6060012,
+    "timestamp": 1612207783496,
+    "acc_trade_price_24h": 503390500539.5724,
+    "acc_trade_volume_24h": 13650.71883738,
+    "stream_type": "SNAPSHOT"
+}
+{
+    "type": "ticker",
+    "code": "KRW-ETH",
+    "opening_price": 1444000.0,
+    "high_price": 1509500.0,
+    "low_price": 1413000.0,
+    "trade_price": 1444000.0,
+    "prev_closing_price": 1444000.0,
+    "acc_trade_price": 331846956832.1946,
+    "change": "EVEN",
+    "change_price": 0.0,
+    "signed_change_price": 0.0,
+    "change_rate": 0,
+    "signed_change_rate": 0,
+    "ask_bid": "ASK",
+    "trade_volume": 1.0,
+    "acc_trade_volume": 229202.315562,
+    "trade_date": "20210201",
+    "trade_time": "192925",
+    "trade_timestamp": 1612207765000,
+    "acc_ask_volume": 126760.03539062,
+    "acc_bid_volume": 102442.28017138,
+    "highest_52_week_price": 1626000.0,
+    "highest_52_week_date": "2021-01-25",
+    "lowest_52_week_price": 124350.0,
+    "lowest_52_week_date": "2020-03-13",
+    "trade_status": null,
+    "market_state": "ACTIVE",
+    "market_state_for_ios": null,
+    "is_trading_suspended": false,
+    "delisting_date": null,
+    "market_warning": "NONE",
+    "timestamp": 1612207765752,
+    "acc_trade_price_24h": 354570292652.8257,
+    "acc_trade_volume_24h": 244893.27187195,
     "stream_type": "SNAPSHOT"
 }
 ```
