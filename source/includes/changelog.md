@@ -1,6 +1,11 @@
 # Change Logs
 
 
+### 2021-02-05
+Update Client Released: v1.1.6.26
+
+- `models.py` 소스 코드 리팩토링: 구조 변경
+
 ### 2021-01-27
 Update Client Released: v1.1.6.25
 
