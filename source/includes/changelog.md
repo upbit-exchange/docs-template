@@ -2,7 +2,7 @@
 
 
 ### 2021-02-05
-Update Client Released: v1.1.6.28
+Update Client Released: v1.1.6.29
 
 - `models.py` 소스 코드 리팩토링: 구조 변경
 - 잘못된 요청을 보낼 시 하위 코드에서 `HTTPError` 예외를 발생하도록 수정
