@@ -177,10 +177,10 @@ async with sock as conn:
 No Parameters
 
 
-## UpbitWebSocket.generate_payload (Payload Generate)
+## UpbitWebSocket.generate_type_field (Type Field Generate)
 **staticmethod**
 
-웹 소켓 수신에 필요한 payload 데이터를 json 형식에 맞춰진 문자열로 generate 합니다.
+웹 소켓 수신에 필요한 payload의 type field 데이터를 generate 합니다.
 
 요청 형식에 대한 사항은 위의 `2. 요청 형식` 섹션을 참고해주세요.
 
@@ -190,40 +190,31 @@ No Parameters
 from upbit.websocket import UpbitWebSocket
 
 currencies = ['KRW-BTC', 'KRW-ETH']
-payload = UpbitWebSocket.generate_payload(
+type_field = UpbitWebSocket.generate_type_field(
     type="trade",
     codes=currencies
 )
-print(payload)
+print(type_field)
 ```
 
 > Result
 
 ```json
-[
-    {
-        "ticket": "0e9a7960-4036-4cf3-abe6-c02712c3aad4"
-    },
-    {
-        "type": "trade",
-        "codes": ["KRW-BTC", "KRW-ETH"]
-    },
-    {
-        "format": "DEFAULT"
-    }
-]
+{
+    "type": "trade",
+    "codes": ["KRW-BTC", "KRW-ETH"]
+}
 ```
 
-### UpbitWebSocket.generate_payload(type, codes, isOnlySnapshot=None, isOnlyRealtime=None, ticket=None, format='DEFAULT')
+### UpbitWebSocket.generate_type_field(type, codes, isOnlySnapshot=None, isOnlyRealtime=None)
+**staticmethod**
 
 Parameter      | Description
 -------------- | --------------------
-ticket         | 식별값 (기본값은 `uuid4` 형식으로 생성)
 type *         | 수신할 시세 타입 (현재가: `ticker`, 체결: `trade`, 호가: `orderbook`)
 codes *        | 수신할 시세 종목 정보 (ex. `['KRW-BTC', 'KRW-ETH']`)
 isOnlySnapshot | 시세 스냅샷만 제공 여부 (`True`, `False`)
 isOnlyRealtime | 실시간 시세만 제공 여부 (`True`, `False`)
-format         | 포맷, `SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본 포맷 (생략 가능)
 
 
 ## UpbitWebSocket.generate_orderbook_codes (Orderbook Codes Generate)
@@ -259,6 +250,73 @@ currencies *   | 수신할 시세 종목들
 counts         | 수신할 각 시세 종목에 대한 개수
 
 
+## UpbitWebSocket.generate_payload (Payload Generate)
+**staticmethod**
+웹 소켓 수신에 필요한 payload 데이터를 json 포맷 형식의 문자열로 generate 합니다.
+
+> Example Code
+
+```python
+from upbit.websocket import UpbitWebSocket
+
+currencies = ['KRW-BTC', 'KRW-ETH', 'KRW-BCH', 'KRW-XRP']
+counts = [1 for _ in range(len(list_currencies))]
+
+codes = UpbitWebSocket.generate_orderbook_codes(
+    currencies=currencies,
+    counts=counts
+)
+
+trade = UpbitWebSocket.generate_type_field(
+    type='trade',
+    codes=currencies
+)
+orderbook = UpbitWebSocket.generate_type_field(
+    type='orderbook',
+    codes=codes
+)
+
+type_fields = [trade, orderbook]
+
+payload = UpbitWebSocket.generate_payload(
+    type_fields=type_fields,
+    format='SIMPLE'
+)
+
+print(payload)
+```
+
+> Result
+
+```json
+[
+    {
+        "ticket": "43552c23-6596-478d-8f71-b8289779a996"
+    },
+    {
+        "type": "trade",
+        "codes": ["KRW-BTC", "KRW-ETH", "KRW-BCH", "KRW-XRP"]
+    },
+    {
+        "type": "orderbook",
+        "codes": ["KRW-BTC.1", "KRW-ETH.1", "KRW-BCH.1", "KRW-XRP.1"]
+    },
+    {
+        "format": "SIMPLE"
+    }
+]
+```
+
+
+### UpbitWebSocket.generate_payload(type_fields, ticket=None, format='DEFAULT')
+
+Parameter      | Description
+-------------- | --------------------
+type_fields *  | Type Fields
+ticket         | 식별값 (기본값은 `uuid4` 형식으로 생성)
+format         | 포맷, `SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본 포맷 (생략 가능)
+
+
 ## 웹 소켓으로 시세 정보 요청하기
 웹 소켓을 통해 시세 정보를 요청합니다.
 
@@ -285,9 +343,12 @@ async def ticker(sock, payload):
 sock = UpbitWebSocket()
 
 currencies = ['KRW-BTC', 'KRW-ETH']
-payload = sock.generate_payload(
+type_field = sock.generate_type_field(
     type='ticker',
     codes=currencies
+)
+payload = sock.generate_payload(
+    type_fields=[type_field]
 )
 
 event_loop = asyncio.get_event_loop()
@@ -333,7 +394,7 @@ event_loop.run_until_complete(ticker(sock, payload))
     "acc_trade_price_24h": 503390500539.5724,
     "acc_trade_volume_24h": 13650.71883738,
     "stream_type": "SNAPSHOT"
-}
+},
 {
     "type": "ticker",
     "code": "KRW-ETH",
@@ -370,7 +431,8 @@ event_loop.run_until_complete(ticker(sock, payload))
     "acc_trade_price_24h": 354570292652.8257,
     "acc_trade_volume_24h": 244893.27187195,
     "stream_type": "SNAPSHOT"
-}
+},
+...
 ```
 
 ### Request Parameters
