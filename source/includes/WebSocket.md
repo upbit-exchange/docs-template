@@ -259,21 +259,22 @@ counts         | 수신할 각 시세 종목에 대한 개수
 ```python
 from upbit.websocket import UpbitWebSocket
 
-currencies = ['KRW-BTC', 'KRW-ETH', 'KRW-BCH', 'KRW-XRP']
-counts = [1 for _ in range(len(list_currencies))]
 
-codes = UpbitWebSocket.generate_orderbook_codes(
-    currencies=currencies,
+codes = ['KRW-BTC', 'KRW-ETH', 'KRW-BCH', 'KRW-XRP']
+counts = [1 for _ in range(len(codes))]
+
+ord_codes = UpbitWebSocket.generate_orderbook_codes(
+    currencies=codes,
     counts=counts
 )
 
 trade = UpbitWebSocket.generate_type_field(
     type='trade',
-    codes=currencies
+    codes=codes
 )
 orderbook = UpbitWebSocket.generate_type_field(
     type='orderbook',
-    codes=codes
+    codes=ord_codes
 )
 
 type_fields = [trade, orderbook]
