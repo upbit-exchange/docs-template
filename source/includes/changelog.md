@@ -2,10 +2,11 @@
 
 
 ### 2021-02-05
-Update Client Released: v1.1.6.27
+Update Client Released: v1.1.6.28
 
 - `models.py` 소스 코드 리팩토링: 구조 변경
 - 잘못된 요청을 보낼 시 하위 코드에서 `HTTPError` 예외를 발생하도록 수정
+- WebSocket Payload Generate 부분 추가 (WebSocket 항목 참고)
 
 ### 2021-01-27
 Update Client Released: v1.1.6.25
