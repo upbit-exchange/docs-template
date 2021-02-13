@@ -1,5 +1,9 @@
 # Change Logs
 
+### 2021-02-13
+Update Client Released: v1.1.6.30
+
+- 부분적인 소스 코드 리팩토링
 
 ### 2021-02-05
 Update Client Released: v1.1.6.29
