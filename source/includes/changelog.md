@@ -1,10 +1,9 @@
 # Change Logs
 
-## 2021
 ### 2021-02-20
 Update Client Released: v1.1.7.0
 
-- Upbit OPEN API 1.1.7 버전 업데이트
+- Upbit OPEN API 버전 1.1.7 업데이트
 - 전체적인 소스 코드 리팩토링
 
 ### 2021-02-13
