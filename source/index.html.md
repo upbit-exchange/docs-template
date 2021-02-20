@@ -10,6 +10,7 @@ toc_footers:
 
 includes:
   - main
+  - changelog
   - intro
   - install
   - first
