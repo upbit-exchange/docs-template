@@ -3,7 +3,7 @@
 ## 2021
 
 ### 2021-02-23
-Update Client Released: v1.1.7.2
+Update Client Released: v1.1.7.3
 
 - 전체적인 소스 코드 리팩토링
 
