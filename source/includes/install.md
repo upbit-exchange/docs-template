@@ -2,10 +2,10 @@
 
 > Command
 
-```console
-> pip install upbit-client
-> git clone https://github.com/uJhin/upbit-client.git
-> git clone https://github.com/uJhin/python-upbit-client.git
+```shell
+pip install upbit-client
+git clone https://github.com/uJhin/upbit-client.git
+git clone https://github.com/uJhin/python-upbit-client.git
 ```
 
 설치는 `git` 커맨드를 사용하여 다음과 같이 진행합니다.
