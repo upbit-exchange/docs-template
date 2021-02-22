@@ -2,16 +2,21 @@
 
 ## 2021
 
+### 2021-02-23
+Update Client Released: v1.1.7.1
+
+- 전체적인 소스 코드 리팩토링
+
 ### 2021-02-20
 Update Client Released: v1.1.7.0
 
-- Upbit OPEN API 버전 1.1.7 업데이트
-- 전체적인 소스 코드 리팩토링
+- Upbit OPEN API 버전 1.1.7 업데이트 반영
 
 ### 2021-02-13
 Update Client Released: v1.1.6.30
 
 - 부분적인 소스 코드 리팩토링
+- 성능 소폭 개선
 
 ### 2021-02-05
 Update Client Released: v1.1.6.29
