@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google-site-verification" content="Ryl9bafTnzf2YKhU-hWQq90L2FglyXGE6_CUcFBcJ4I" />
     <title>Upbit Client Referance</title>
 
     <style media="screen">
@@ -248,8 +249,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -308,7 +312,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#intro" class="toc-h1 toc-link" data-title="Intro (개요)">Intro (개요)</a>
+            <a href="#upbit-client-official-reference" class="toc-h1 toc-link" data-title="Upbit Client Official Reference">Upbit Client Official Reference</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#referance" class="toc-h2 toc-link" data-title="Referance">Referance</a>
@@ -322,13 +326,32 @@
             <a href="#change-logs" class="toc-h1 toc-link" data-title="Change Logs">Change Logs</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#2021-01-10" class="toc-h2 toc-link" data-title="2021-01-10">2021-01-10</a>
+                    <a href="#2021" class="toc-h2 toc-link" data-title="2021">2021</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#intro" class="toc-h1 toc-link" data-title="Intro (개요)">Intro (개요)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#support" class="toc-h2 toc-link" data-title="Support">Support</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#install" class="toc-h1 toc-link" data-title="Install (설치)">Install (설치)</a>
+          </li>
+          <li>
+            <a href="#upbitclient-upbit" class="toc-h1 toc-link" data-title="UpbitClient (Upbit 클라이언트 사용하기)">UpbitClient (Upbit 클라이언트 사용하기)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#4d259256d6" class="toc-h2 toc-link" data-title="클라이언트 객체 생성">클라이언트 객체 생성</a>
                   </li>
                   <li>
-                    <a href="#2021-01-08" class="toc-h2 toc-link" data-title="2021-01-08">2021-01-08</a>
+                    <a href="#upbitclient-access_key-secret_key-kwargs" class="toc-h2 toc-link" data-title="UpbitClient(access_key, secret_key, **kwargs)">UpbitClient(access_key, secret_key, **kwargs)</a>
                   </li>
                   <li>
-                    <a href="#2021-01-07" class="toc-h2 toc-link" data-title="2021-01-07">2021-01-07</a>
+                    <a href="#71d855acd9" class="toc-h2 toc-link" data-title="결과">결과</a>
                   </li>
               </ul>
           </li>
@@ -336,10 +359,15 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication (인증)">Authentication (인증)</a>
           </li>
           <li>
-            <a href="#install" class="toc-h1 toc-link" data-title="Install (설치)">Install (설치)</a>
-          </li>
-          <li>
-            <a href="#upbitclient-upbit" class="toc-h1 toc-link" data-title="UpbitClient (Upbit 클라이언트 사용하기)">UpbitClient (Upbit 클라이언트 사용하기)</a>
+            <a href="#remaining-requests" class="toc-h1 toc-link" data-title="Remaining Requests (요청 수 제한)">Remaining Requests (요청 수 제한)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#e193e9d311" class="toc-h2 toc-link" data-title="남은 요청 수 확인하기">남은 요청 수 확인하기</a>
+                  </li>
+                  <li>
+                    <a href="#4274c598a1" class="toc-h2 toc-link" data-title="상세 설명">상세 설명</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#apikey-api" class="toc-h1 toc-link" data-title="APIKey (API 키)">APIKey (API 키)</a>
@@ -460,6 +488,46 @@
               </ul>
           </li>
           <li>
+            <a href="#websocket" class="toc-h1 toc-link" data-title="WebSocket (웹 소켓)">WebSocket (웹 소켓)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#476966c5a8" class="toc-h2 toc-link" data-title="개요">개요</a>
+                  </li>
+                  <li>
+                    <a href="#upbitwebsocket" class="toc-h2 toc-link" data-title="UpbitWebSocket">UpbitWebSocket</a>
+                  </li>
+                  <li>
+                    <a href="#socket-connection" class="toc-h2 toc-link" data-title="socket.Connection">socket.Connection</a>
+                  </li>
+                  <li>
+                    <a href="#conn-send" class="toc-h2 toc-link" data-title="conn.send">conn.send</a>
+                  </li>
+                  <li>
+                    <a href="#conn-recv" class="toc-h2 toc-link" data-title="conn.recv">conn.recv</a>
+                  </li>
+                  <li>
+                    <a href="#upbitwebsocket-generate_type_field-type-field-generate" class="toc-h2 toc-link" data-title="UpbitWebSocket.generate_type_field (Type Field Generate)">UpbitWebSocket.generate_type_field (Type Field Generate)</a>
+                  </li>
+                  <li>
+                    <a href="#upbitwebsocket-generate_orderbook_codes-orderbook-codes-generate" class="toc-h2 toc-link" data-title="UpbitWebSocket.generate_orderbook_codes (Orderbook Codes Generate)">UpbitWebSocket.generate_orderbook_codes (Orderbook Codes Generate)</a>
+                  </li>
+                  <li>
+                    <a href="#upbitwebsocket-generate_payload-payload-generate" class="toc-h2 toc-link" data-title="UpbitWebSocket.generate_payload (Payload Generate)">UpbitWebSocket.generate_payload (Payload Generate)</a>
+                  </li>
+                  <li>
+                    <a href="#8240d4d69a" class="toc-h2 toc-link" data-title="웹 소켓으로 시세 정보 요청하기">웹 소켓으로 시세 정보 요청하기</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#utils" class="toc-h1 toc-link" data-title="Utils (유틸리티 모듈)">Utils (유틸리티 모듈)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#validator" class="toc-h2 toc-link" data-title="Validator">Validator</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -479,7 +547,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='intro'>Intro (개요)</h1>
+        <h1 id='upbit-client-official-reference'>Upbit Client Official Reference</h1>
 <p><img src="images/logo-b6eb5752.png" width="250" height="250"></p>
 
 <p><strong>Upbit OPEN API Client 사용법과 설명에 대한 문서입니다.</strong></p>
@@ -501,8 +569,15 @@
   </li>
   <li>
     <b>
+      <a href="https://github.com/uJhin/python-upbit-client/">
+        <img src="images/github-b3634bfd.svg"/> GitHub Repository for Python Package
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
       <a href="https://pypi.org/project/upbit-client/">
-        <img src="images/pypi-3e55f126.svg"/>
+        <img src="images/pypi-8394cfb8.svg"/>
         <img src="https://img.shields.io/pypi/v/upbit-client"/>
       </a>
     </b>
@@ -545,7 +620,79 @@
 <li><strong>BTC</strong>: 3NVw2seiTQddGQwc1apqudKxuTqebpyL3s</li>
 <li><strong>ETH</strong>: 0x60dd373f59862d9df776596889b997e24bee42eb</li>
 </ul>
-<h1 id='change-logs'>Change Logs</h1><h3 id='2021-01-10'>2021-01-10</h3>
+<h1 id='change-logs'>Change Logs</h1><h2 id='2021'>2021</h2><h3 id='2021-02-23'>2021-02-23</h3>
+<p>Update Client Released: v1.1.7.1</p>
+
+<ul>
+<li>전체적인 소스 코드 리팩토링</li>
+</ul>
+<h3 id='2021-02-20'>2021-02-20</h3>
+<p>Update Client Released: v1.1.7.0</p>
+
+<ul>
+<li>Upbit OPEN API 버전 1.1.7 업데이트 반영</li>
+</ul>
+<h3 id='2021-02-13'>2021-02-13</h3>
+<p>Update Client Released: v1.1.6.30</p>
+
+<ul>
+<li>부분적인 소스 코드 리팩토링</li>
+<li>성능 소폭 개선</li>
+</ul>
+<h3 id='2021-02-05'>2021-02-05</h3>
+<p>Update Client Released: v1.1.6.29</p>
+
+<ul>
+<li><code>models.py</code> 소스 코드 리팩토링: 구조 변경</li>
+<li>잘못된 요청을 보낼 시 하위 코드에서 <code>HTTPError</code> 예외를 발생하도록 수정</li>
+<li>WebSocket Payload Generate 부분 추가 (WebSocket 항목 참고)</li>
+</ul>
+<h3 id='2021-01-27'>2021-01-27</h3>
+<p>Update Client Released: v1.1.6.25</p>
+
+<ul>
+<li>웹 소켓(Web Socket) 연결 끊김 문제 해결</li>
+<li>UpbitWebSocket 클래스에 ping 관리를 위한 <code>ping_interval</code> 및 <code>ping_timeout</code> 파라미터 추가</li>
+</ul>
+<h3 id='2021-01-26'>2021-01-26</h3>
+<p>Update Client Released: v1.1.6.23</p>
+
+<ul>
+<li>모든 <code>response</code>에 요청 제한 수가 출력되도록 수정</li>
+<li>웹 소켓(Web Socket) 클라이언트 모듈 추가</li>
+<li><code>UpbitWebSocket</code> 항목 참고</li>
+<li>그 외 전체적인 소스 코드 리팩토링</li>
+</ul>
+<h3 id='2021-01-22'>2021-01-22</h3>
+<p>Update Upbit OPEN API</p>
+
+<ul>
+<li>주문 리스트 조회 (<strong>GET</strong> /v1/orders): <code>kind</code> 요청 파라미터 제거</li>
+<li>변경 결과: <code>normal</code> (일반 주문), <code>watch</code> (예약 주문) 동시 조회</li>
+</ul>
+<h3 id='2021-01-18'>2021-01-18</h3>
+<p>Upbit Client Released: v1.1.6.16</p>
+
+<ul>
+<li>유틸리티 모듈 <code>utils.py</code> 추가</li>
+<li>주문 가능한 가격 유닛을 검증하는 기능 추가</li>
+<li><code>validate_price</code> 함수 참고</li>
+</ul>
+<h3 id='2021-01-15'>2021-01-15</h3>
+<p>Upbit Client Released: v1.1.6.15</p>
+
+<ul>
+<li>남은 요청 수 확인 기능 추가</li>
+<li>본 문서의 <code>remaining_request</code> 파트 참고</li>
+</ul>
+<h3 id='2021-01-12'>2021-01-12</h3>
+<p>Upbit Client Released: v1.1.6.14</p>
+
+<ul>
+<li><code>setup.py</code> 소스 코드 리팩토링</li>
+<li><a href="https://github.com/uJhin/python-upbit-client">Python Upbit Client</a> 저장소 생성 후 분기</li>
+</ul>
+<h3 id='2021-01-10'>2021-01-10</h3>
 <p>Upbit Client Released: v1.1.6.12</p>
 
 <ul>
@@ -565,6 +712,99 @@
 <ul>
 <li>Upbit OPEN API 버전이 1.1.6로 업데이트 되어 최신 버전에 맞춰 구현 및 배포</li>
 </ul>
+<h1 id='intro'>Intro (개요)</h1>
+<p><strong>Upbit(업비트) Cryptocurrency Exchange Open API Client of Multi-Programming Language Support</strong></p>
+
+<p>Upbit Client(업비트 클라이언트)는 업비트 OPEN API에 접근할 수 있는 인터페이스를 제공합니다.</p>
+<h3 id='support'>Support</h3>
+<ul>
+<li><a href="https://docs.upbit.com/">Official Upbit OPEN API Documents</a></li>
+<li><a href="https://github.com/swagger-api">Swagger</a></li>
+</ul>
+<h1 id='install'>Install (설치)</h1>
+<blockquote>
+<p>Command</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>pip <span class="nb">install </span>upbit-client
+git clone https://github.com/uJhin/upbit-client.git
+git clone https://github.com/uJhin/python-upbit-client.git
+</code></pre></div>
+<p>설치는 <code>git</code> 커맨드를 사용하여 다음과 같이 진행합니다.</p>
+
+<p><code>git clone https://github.com/uJhin/upbit-client.git</code></p>
+
+<p>Python 패키지는 아래와 같이 진행합니다.</p>
+
+<p><code>git clone https://github.com/uJhin/python-upbit-client.git</code></p>
+
+<p>혹은 <code>pip</code> 커맨드를 사용하여 다음과 같이 진행합니다.</p>
+
+<p><code>pip install upbit-client</code></p>
+<h1 id='upbitclient-upbit'>UpbitClient (Upbit 클라이언트 사용하기)</h1><h3 id='4d259256d6'>클라이언트 객체 생성</h3>
+<blockquote>
+<p>Code Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
+
+<span class="n">access_key</span> <span class="o">=</span> <span class="s">"발급받은 액세스 키"</span>
+<span class="n">secret_key</span> <span class="o">=</span> <span class="s">"발급받은 시크릿 키"</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">UpbitClient</span><span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="p">.</span><span class="n">upbit</span><span class="p">.</span><span class="n">com</span><span class="p">)</span>
+</code></pre></div>
+<p>설치가 완료되면 <code>from upbit.client import Upbit</code>로 패키지를 import 합니다.
+그 다음 <code>UpbitClient</code> 객체를 생성하면 클라이언트를 사용할 준비가 완료됩니다.</p>
+<h3 id='upbitclient-access_key-secret_key-kwargs'>UpbitClient(access_key, secret_key, **kwargs)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_key</td>
+<td>발급받은 액세스 키</td>
+</tr>
+<tr>
+<td>secret_key</td>
+<td>발급받은 시크릿 키</td>
+</tr>
+<tr>
+<td>spec_uri</td>
+<td>Swagger Mapping JSON Path</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Swagger Client Configuration</td>
+</tr>
+</tbody></table>
+<h3 id='71d855acd9'>결과</h3>
+<p>모든 요청에 대한 결과는 JSON 포맷으로 반환됩니다.</p>
+
+<p>남은 요청 제한 시간에 대한 <code>remaining_request</code>와 응답 결과 <code>result</code>의 키(key) 값을 가집니다.</p>
+
+<p>요청 제한에 대한 부분은 <code>Remaining Requests (요청 수 제한)</code> 섹션에서 다룹니다.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>remaining_request</td>
+<td>남은 요청 제한 시간</td>
+</tr>
+<tr>
+<td>result</td>
+<td>요청에 대한 결과</td>
+</tr>
+</tbody></table>
 <h1 id='authentication'>Authentication (인증)</h1>
 <blockquote>
 <p>Request Example</p>
@@ -601,67 +841,89 @@ payload의 <code>query_hash</code> 값을 생성할 때 사용하는 쿼리 값�
 <aside class="warning">
 Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <code>secret key</code>는 base64로 encoding 되어있지 않습니다.</b> JWT 관련 library를 사용하신다면 해당 옵션을 확인해주세요.
 </aside>
-<h1 id='install'>Install (설치)</h1>
-<blockquote>
-<p>pip command</p>
-</blockquote>
-<div class="highlight"><pre class="highlight console tab-console"><code><span class="go">pip install upbit-client
-</span></code></pre></div>
-<blockquote>
-<p>git command</p>
-</blockquote>
-<div class="highlight"><pre class="highlight console tab-console"><code><span class="go">git clone https://github.com/uJhin/upbit-client.git
-</span></code></pre></div>
-<p>설치는 <code>pip</code> 커맨드를 사용하여 다음과 같이 진행합니다.</p>
+<h1 id='remaining-requests'>Remaining Requests (요청 수 제한)</h1><h3 id='e193e9d311'>남은 요청 수 확인하기</h3>
+<p>UpbitClient 사용 시 모든 결과는 <code>json</code> 포맷으로 반환되며, <code>remaining_request</code> 키값을 가집니다.</p>
 
-<p><code>pip install upbit-client</code></p>
-
-<p>혹은 <code>git</code> 커맨드를 사용하여 다음과 같이 진행합니다.</p>
-
-<p><code>git clone https://github.com/uJhin/upbit-client.git</code></p>
-<h1 id='upbitclient-upbit'>UpbitClient (Upbit 클라이언트 사용하기)</h1>
 <blockquote>
-<p>Code Example</p>
+<p>Example Code</p>
 </blockquote>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
-<span class="n">access_key</span> <span class="o">=</span> <span class="s">"발급받은 액세스 키"</span>
-<span class="n">secret_key</span> <span class="o">=</span> <span class="s">"발급받은 시크릿 키"</span>
+<span class="n">access_key</span> <span class="o">=</span> <span class="s">"Your Access Key"</span>
+<span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">APIKey</span><span class="p">.</span><span class="n">APIKey_info</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>Result Example</p>
 </blockquote>
-<div class="highlight"><pre class="highlight console tab-console"><code><span class="go">UpbitClient(https://api.upbit.com/v1)
-</span></code></pre></div>
-<p>설치가 완료되면 <code>from upbit.client import Upbit</code>로 패키지를 import 합니다.
-그 다음 <code>UpbitClient</code> 객체를 생성하면 클라이언트를 사용할 준비가 완료됩니다.</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"remaining_request"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"899"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='4274c598a1'>상세 설명</h3><h4 id='exchange-api'>EXCHANGE API</h4>
+<p><strong>주문</strong></p>
 
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>access_key</td>
-<td>발급받은 액세스 키</td>
-</tr>
-<tr>
-<td>secret_key</td>
-<td>발급받은 시크릿 키</td>
-</tr>
-<tr>
-<td>spec_uri</td>
-<td>Swagger Mapping JSON Path</td>
-</tr>
-<tr>
-<td>config</td>
-<td>Swagger Client Configuration</td>
-</tr>
-</tbody></table>
+<p><code>초당 8회</code>, <code>분당 200회</code></p>
+
+<p><strong>주문 외 API</strong></p>
+
+<p><code>초당 30회</code>, <code>분당 900회</code></p>
+
+<p><strong>Exchange API 추가 안내 사항</strong></p>
+
+<ul>
+<li>본 기준은 개별 Open API Key에 대한 요청 수 제한 기준 입니다.</li>
+<li>본 기준 내의 요청의 경우에도 하나의 계정으로 여러 개의 Open API Key를 이용하여 요청할 경우, 업비트 전체 서비스의 안정적인 제공을 위하여 요청 수 제한이 발생할 수 있습니다.</li>
+<li>서비스 및 서버 상황 등에 따라 상기 요청 수가 일시적으로 보장되지 않을 수 있습니다.</li>
+<li>사용 가능한 잔여 요청 수는 하단의 잔여 요청 수 확인 방법을 참고하시어 확인하실 수 있습니다.</li>
+<li>(업데이트) 주문 API와 주문 외 API 요청 수 제한은 별도로 계산 됩니다.</li>
+</ul>
+<h4 id='quotation-api'>QUOTATION API</h4>
+<p><strong>웹 소켓(Websocket) 연결 요청 수 제한</strong></p>
+
+<p><code>초당 5회</code>, <code>분당 100회</code></p>
+
+<p><strong>REST API 요청 수 제한</strong></p>
+
+<p><code>분당 600회</code>, <code>초당 10회</code> <strong>(종목, 캔들, 체결, 티커, 호가별)</strong></p>
+
+<p>[Quotation API 추가 안내 사항]</p>
+
+<ul>
+<li>Quotation API의 요청 수 제한은 IP 주소를 기준으로 합니다.</li>
+<li>향후 안정적인 서비스 제공을 위하여 API 요청 수는 추가적인 조정이 이루어질 수 있습니다. 요청 수 조정 필요 시 별도 공지를 통해 안내드리겠습니다. (<a href="https://upbit.com/service_center/notice">Upbit 공식 사이트 공지사항 바로가기</a>)</li>
+<li>초당 제한 조건과 분당 제한 조건 중 하나의 조건이라도 요청 수를 초과할 경우 요청 수 제한 적용 됩니다.</li>
+<li>요청 수 제한 조건에 적용되는 시간 조건은 첫 요청 시간을 기준으로하며, 일정 시간 이후 초기화됩니다. (실패한 요청은 요청 횟수에 포함되지 않습니다.)</li>
+<li>다수의 REST API 요청이 필요하신 경우, WebSocket을 통한 수신 부탁드립니다.</li>
+</ul>
+
+<p>[Exchange API 잔여 요청 수 확인 방법]</p>
+
+<ul>
+<li>업비트 Open API 서비스는 원활한 사용 환경을 위해 초당 / 분당 요청 수를 제한하고 있습니다.</li>
+<li>Open API 호출 시 남아있는 요청 수는 <code>Remaining-Req</code> 응답 해더를 통해 확인 가능합니다.</li>
+</ul>
+
+<p><code>Remaining-Req: group=default; min=1799; sec=29</code></p>
+
+<p>위와 같은 포멧의 응답 해더를 수신했다면, <code>default</code> 라는 그룹에 대하여 해당 초에 29개의 요청, 남은 1분간 1799개의 요청이 가능하다는 것을 의미합니다.</p>
+
+<p>주문하기 Open API의 경우,</p>
+
+<p><code>Remaining-Req: group=order; min=59; sec=4</code></p>
+
+<p>위와 같은 응답이 올 수 있으며, 이는 <code>order</code> 라는 그룹에 대해 해당 초에 4번, 남은 1분은 59번의 주문 요청이 가능하다는 것을 의미합니다.</p>
+
+<aside class="notice">
+  <b>NOTE</b>: 해당 시간 내 초과된 요청에 대해서 <code>429 Too Many   Requests</code> 오류가 발생할 수 있습니다. 하지만 별도의 추가적인   페널티는 부과되지 않습니다.
+</aside>
 <h1 id='apikey-api'>APIKey (API 키)</h1><h2 id='apikey_info-api'>APIKey_info (API 키 리스트 조회)</h2>
 <p>API 키 목록 및 만료 일자를 조회합니다.</p>
 
@@ -674,8 +936,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">APIKey</span><span class="p">.</span><span class="n">APIKey_info</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">APIKey</span><span class="p">.</span><span class="n">APIKey_info</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -724,8 +986,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Account</span><span class="p">.</span><span class="n">Account_info</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Account</span><span class="p">.</span><span class="n">Account_info</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -806,8 +1068,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Account</span><span class="p">.</span><span class="n">Account_wallet</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Account</span><span class="p">.</span><span class="n">Account_wallet</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -934,8 +1196,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Market</span><span class="p">.</span><span class="n">Market_info_all</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Market</span><span class="p">.</span><span class="n">Market_info_all</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -1017,10 +1279,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_orderbook</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_orderbook</span><span class="p">(</span>
     <span class="n">markets</span><span class="o">=</span><span class="p">[</span><span class="s">'KRW-BTC'</span><span class="p">,</span> <span class="s">'KRW-ETH'</span><span class="p">]</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -1165,10 +1427,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_chance</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_chance</span><span class="p">(</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -1248,6 +1510,14 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <tr>
 <td>ask_fee</td>
 <td>매도 수수료 비율</td>
+</tr>
+<tr>
+<td>maker_bid_fee</td>
+<td>매수 시 메이커 수수료 비율</td>
+</tr>
+<tr>
+<td>maker_ask_fee</td>
+<td>매도 시 메이커 수수료 비율</td>
 </tr>
 <tr>
 <td>market</td>
@@ -1382,10 +1652,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_info</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_info</span><span class="p">(</span>
     <span class="n">uuid</span><span class="o">=</span><span class="s">'9ca023a5-851b-4fec-9f0a-48cd83c2eaae'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -1553,8 +1823,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_info_all</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_info_all</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -1636,18 +1906,6 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
   </td>
   <td>
       주문 상태의 목록
-  </td>
-</tr>
-<tr>
-  <td>
-      kind
-  </td>
-  <td>
-      주문 유형
-      <ul>
-        <li>normal: 일반 주문</li>
-        <li>watch: 예약 주문</li>
-      </ul>
   </td>
 </tr>
 <tr>
@@ -1759,14 +2017,14 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_new</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_new</span><span class="p">(</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span><span class="p">,</span>
     <span class="n">side</span><span class="o">=</span><span class="s">'bid'</span><span class="p">,</span>
     <span class="n">volume</span><span class="o">=</span><span class="s">'0.01'</span><span class="p">,</span>
     <span class="n">price</span><span class="o">=</span><span class="s">'100.0'</span><span class="p">,</span>
     <span class="n">ord_type</span><span class="o">=</span><span class="s">'limit'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -1981,10 +2239,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_cancel</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Order</span><span class="p">.</span><span class="n">Order_cancel</span><span class="p">(</span>
     <span class="n">uuid</span><span class="o">=</span><span class="s">'cdd92199-2897-4e14-9448-f923320408ad'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -2110,8 +2368,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_info_all</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_info_all</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -2333,10 +2591,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_info</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_info</span><span class="p">(</span>
     <span class="n">uuid</span><span class="o">=</span><span class="s">'20c84493-6e70-4e54-83ce-90915a19d110'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -2503,8 +2761,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_coin_addresses</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_coin_addresses</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -2577,10 +2835,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_coin_address</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_coin_address</span><span class="p">(</span>
     <span class="n">currency</span><span class="o">=</span><span class="s">'BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -2645,10 +2903,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_generate_coin_address</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Deposit</span><span class="p">.</span><span class="n">Deposit_generate_coin_address</span><span class="p">(</span>
     <span class="n">currency</span><span class="o">=</span><span class="s">'SNT'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response1 Example: 201 Created</p>
@@ -2744,8 +3002,8 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_info_all</span><span class="p">().</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_info_all</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -2957,10 +3215,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_info</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_info</span><span class="p">(</span>
     <span class="n">uuid</span><span class="o">=</span><span class="s">'35a4f1dc-1db5-4d6b-89b5-7ec137875956'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -3127,10 +3385,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_chance</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_chance</span><span class="p">(</span>
     <span class="n">currency</span><span class="o">=</span><span class="s">'BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -3337,12 +3595,12 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_coin</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_coin</span><span class="p">(</span>
     <span class="n">currency</span><span class="o">=</span><span class="s">'BTC'</span><span class="p">,</span>
     <span class="n">amount</span><span class="o">=</span><span class="s">'0.01'</span><span class="p">,</span>
     <span class="n">address</span><span class="o">=</span><span class="s">'3NVw2seiTQddGQwc1apqudKxuTqebpyL3s'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -3534,10 +3792,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <span class="n">secret_key</span> <span class="o">=</span> <span class="s">"Your Secret Key"</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">(</span><span class="n">access_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_krw</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Withdraw</span><span class="p">.</span><span class="n">Withdraw_krw</span><span class="p">(</span>
     <span class="n">amount</span><span class="o">=</span><span class="s">'10000'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -3674,11 +3932,11 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_minutes</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_minutes</span><span class="p">(</span>
     <span class="n">unit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -3788,10 +4046,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_days</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_days</span><span class="p">(</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -3911,10 +4169,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_weeks</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_weeks</span><span class="p">(</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -4020,10 +4278,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_month</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Candle</span><span class="p">.</span><span class="n">Candle_month</span><span class="p">(</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -4129,10 +4387,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Trade</span><span class="p">.</span><span class="n">Trade_ticks</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Trade</span><span class="p">.</span><span class="n">Trade_ticks</span><span class="p">(</span>
     <span class="n">market</span><span class="o">=</span><span class="s">'KRW-BTC'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -4243,10 +4501,10 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.client</span> <span class="kn">import</span> <span class="n">Upbit</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Upbit</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Trade</span><span class="p">.</span><span class="n">Trade_ticker</span><span class="p">(</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">Trade</span><span class="p">.</span><span class="n">Trade_ticker</span><span class="p">(</span>
     <span class="n">markets</span><span class="o">=</span><span class="s">'KRW-BTC, KRW-ETH'</span>
-<span class="p">).</span><span class="n">result</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="s">'result'</span><span class="p">])</span>
 </code></pre></div>
 <blockquote>
 <p>Response Example</p>
@@ -4433,6 +4691,1083 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 <td>타임스탬프</td>
 </tr>
 </tbody></table>
+<h1 id='websocket'>WebSocket (웹 소켓)</h1><h2 id='476966c5a8'>개요</h2><h3 id='1'>1. 시세 정보</h3>
+<p>WebSocket을 이용하여 수신할 수 있는 정보는 다음과 같습니다.</p>
+
+<ol>
+<li>현재가 (스냅샷, 실시간 정보 제공)</li>
+<li>체결 (스냅샷, 실시간 정보 제공)</li>
+<li>호가 (스냅샷, 실시간 정보 제공)</li>
+</ol>
+
+<p>각각의 정보는 <code>스냅샷</code>과 <code>실시간 데이터</code>로 나뉘며 요청 방법에 따라 수신할 수 있는 데이터가 달라집니다.</p>
+
+<p><code>스냅샷</code> 정보란 요청 당시의 상태를 의미합니다.</p>
+
+<p><code>실시간</code> 정보란 요청 정보가 스트림 형태로 지속적으로 제공되는 것을 의미합니다.</p>
+
+<p>WebSocket을 이용하여 스냅샷 정보나 실시간 정보를 요청할 수 있으며 둘 중 하나의 정보만을 요청할 수도 있습니다.</p>
+
+<p>자세한 요청 방법은 <code>2. 요청 포맷</code> 섹션과 <code>UpbitWebSocket</code> 섹션에서 다룹니다.</p>
+<h3 id='2'>2. 요청 형식</h3>
+<p>연결이 성공적으로 이루어졌다면 웹소켓 서버에 여러가지 요청을 할 수 있습니다.
+요청은 JSON Object를 이용하며 응답 또한 JSON Object 입니다.</p>
+
+<p>요청은 크게 <code>[{ticket field}, {type field}, {format field}]</code> 로 나누어지며 각각의 필드는 다음 구성요소로 이루어져 있습니다.</p>
+
+<p><strong>Ticket Field</strong></p>
+
+<p>일반적으로 용도를 식별하기 위해 <code>ticket</code> 이라는 필드값이 필요합니다.</p>
+
+<p>이 값은 시세를 수신하는 대상을 식별하며 되도록 유니크한 값을 사용하도록 권장합니다. (UUID 등)</p>
+
+<table><thead>
+<tr>
+<th>필드 명</th>
+<th>내용</th>
+<th>타입</th>
+<th>필요 여부</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticket</td>
+<td>식별값</td>
+<td>String</td>
+<td>O</td>
+</tr>
+</tbody></table>
+
+<p><strong>Type Field</strong></p>
+
+<p>수신하고 싶은 시세 정보를 나열하는 필드입니다.</p>
+
+<p><code>isOnlySnapshot</code>, <code>isOnlyRealtime</code> 필드는 생략 가능하며 모두 생략시 스냅샷과 실시간 데이터 모두를 수신합니다.</p>
+
+<p>하나의 요청에 <code>{type field}</code> 는 여러개를 명시할 수 있습니다.</p>
+
+<table><thead>
+<tr>
+<th>필드명</th>
+<th>내용</th>
+<th>타입</th>
+<th>필요 여부</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>수신할 시세 타입 (현재가: <code>ticker</code>, 체결: <code>trade</code>, 호가: <code>orderbook</code>)</td>
+<td>String</td>
+<td>O</td>
+</tr>
+<tr>
+<td>codes</td>
+<td>수신할 시세 종목 정보 (<strong>주의</strong>: codes 필드에 명시되는 종목들은 대문자로 요청해야 합니다.)</td>
+<td>List</td>
+<td>O</td>
+</tr>
+<tr>
+<td>isOnlySnapshot</td>
+<td>시세 스냅샷만 제공</td>
+<td>Boolean</td>
+<td>X</td>
+</tr>
+<tr>
+<td>isOnlyRealtime</td>
+<td>실시간 시세만 제공</td>
+<td>Boolean</td>
+<td>X</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+    <b>NOTE</b>: v1.1.0 Orderbook Unit 갯수 커스텀 수신기능 추가
+    <br/><br/>
+    v1.1.0 부터 orderbook 타입의 패킷에 한하여 Orderbook Unit의 갯수를 최대 제공 갯수(15개) 안에서 원하는 만큼 조절하여 호출 가능합니다.
+    <br/>
+    기존의 <code>codes</code> 항목에 시세 종목과 원하는 Unit 갯수를 넣어주시면 됩니다.
+    <br/>
+    형식: <code>{code}.{count}</code>
+    <br/>
+    ex) "KRW-BTC.5", "BTC-XRP.3"
+    <br/><br/>
+</aside>
+
+<p><strong>Format Field</strong></p>
+
+<p>마지막으로 포맷 정보입니다. <code>Simple</code>로 지정될 경우 응답의 필드명이 모두 간소화됩니다.</p>
+
+<p>트래픽 부담이 클 때 사용하는 방법입니다.</p>
+
+<table><thead>
+<tr>
+<th>필드명</th>
+<th>내용</th>
+<th>타입</th>
+<th>필요 여부</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>포맷 (<code>SIMPLE</code>: 간소화된 필드명, <code>DEFAULT</code>: 기본값(생략 가능)</td>
+<td>String</td>
+<td>X (기본: <code>Default</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='upbitwebsocket'>UpbitWebSocket</h2>
+<p>고성능 네트워크 및 웹 서버 비동기(async) 프레임워크 기반의 동시성 코드 작성을 위한 업비트 웹 소켓 클래스를 생성합니다.</p>
+
+<p>자세한 사항은 파이썬 표준 라이브러리 <a href="https://docs.python.org/3/library/asyncio.html"><code>asyncio</code></a> 패키지를 참고해주세요.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">()</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">sock</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="c1"># Do something
+</span>    <span class="k">pass</span>
+</code></pre></div><h3 id='upbitwebsocket-uri-websocket_uri-ping_interval-none-ping_timeout-none'>UpbitWebSocket(uri=WEBSOCKET_URI, ping_interval=None, ping_timeout=None)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uri</td>
+<td>웹 소켓에 연결할 URI. (기본값: <code>wss://api.upbit.com/websocket/v1</code>)</td>
+</tr>
+<tr>
+<td>ping_interval</td>
+<td>ping 간격 제한 (기본값: <code>None</code>)</td>
+</tr>
+<tr>
+<td>ping_timeout</td>
+<td>ping 시간 초과 제한 (기본값: <code>None</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='socket-connection'>socket.Connection</h2>
+<p><strong>Property</strong></p>
+
+<p>웹 소켓에 연결하기 위해 생성된 Connection 객체입니다.</p>
+
+<p>위의 예제와 동일한 결과를 가집니다.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">()</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">sock</span><span class="p">.</span><span class="n">Connection</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">connection</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="c1"># Do Something
+</span>    <span class="k">pass</span>
+</code></pre></div><h2 id='conn-send'>conn.send</h2>
+<p>웹 소켓에 데이터를 수신합니다.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">()</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">sock</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="s">'PING'</span><span class="p">)</span>
+</code></pre></div><h3 id='conn-send-message'>conn.send(message)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message *</td>
+<td>서버에 수신할 데이터</td>
+</tr>
+</tbody></table>
+<h2 id='conn-recv'>conn.recv</h2>
+<p>서버로부터 전달받은 바이트 스트림(bytes stream) 데이터를 받습니다.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">()</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">sock</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+    <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="s">'PING'</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">recv</span><span class="p">()</span>
+
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="s">'{"\S+":"\S+"}'</span><span class="p">)</span>
+    <span class="n">search</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">search</span><span class="p">.</span><span class="n">group</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UP"</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='conn-recv-2'>conn.recv()</h3>
+<p>No Parameters</p>
+<h2 id='upbitwebsocket-generate_type_field-type-field-generate'>UpbitWebSocket.generate_type_field (Type Field Generate)</h2>
+<p><strong>staticmethod</strong></p>
+
+<p>웹 소켓 수신에 필요한 payload의 type field 데이터를 generate 합니다.</p>
+
+<p>요청 형식에 대한 사항은 위의 <code>2. 요청 형식</code> 섹션을 참고해주세요.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+<span class="n">currencies</span> <span class="o">=</span> <span class="p">[</span><span class="s">'KRW-BTC'</span><span class="p">,</span> <span class="s">'KRW-ETH'</span><span class="p">]</span>
+<span class="n">type_field</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">.</span><span class="n">generate_type_field</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s">"trade"</span><span class="p">,</span>
+    <span class="n">codes</span><span class="o">=</span><span class="n">currencies</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">type_field</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"KRW-BTC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-ETH"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='upbitwebsocket-generate_type_field-type-codes-isonlysnapshot-none-isonlyrealtime-none'>UpbitWebSocket.generate_type_field(type, codes, isOnlySnapshot=None, isOnlyRealtime=None)</h3>
+<p><strong>staticmethod</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type *</td>
+<td>수신할 시세 타입 (현재가: <code>ticker</code>, 체결: <code>trade</code>, 호가: <code>orderbook</code>)</td>
+</tr>
+<tr>
+<td>codes *</td>
+<td>수신할 시세 종목 정보 (ex. <code>[&#39;KRW-BTC&#39;, &#39;KRW-ETH&#39;]</code>)</td>
+</tr>
+<tr>
+<td>isOnlySnapshot</td>
+<td>시세 스냅샷만 제공 여부 (<code>True</code>, <code>False</code>)</td>
+</tr>
+<tr>
+<td>isOnlyRealtime</td>
+<td>실시간 시세만 제공 여부 (<code>True</code>, <code>False</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='upbitwebsocket-generate_orderbook_codes-orderbook-codes-generate'>UpbitWebSocket.generate_orderbook_codes (Orderbook Codes Generate)</h2>
+<p><strong>staticmethod</strong></p>
+
+<p><code>type</code> 파라미터가 <code>orderbook</code>일 경우에 필요한 <code>codes</code> 파라미터를 요청 형식에 맞춰 generate 합니다.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+<span class="n">currencies</span> <span class="o">=</span> <span class="p">[</span><span class="s">'KRW-BTC'</span><span class="p">,</span> <span class="s">'KRW-ETH'</span><span class="p">]</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">.</span><span class="n">generate_orderbook_codes</span><span class="p">(</span>
+    <span class="n">currencies</span><span class="p">,</span>
+    <span class="n">counts</span>
+<span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="s2">"KRW-BTC.5"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-ETH.5"</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='upbitwebsocket-generate_orderbook_codes-currencies-counts-none'>UpbitWebSocket.generate_orderbook_codes(currencies, counts=None)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currencies *</td>
+<td>수신할 시세 종목들</td>
+</tr>
+<tr>
+<td>counts</td>
+<td>수신할 각 시세 종목에 대한 개수</td>
+</tr>
+</tbody></table>
+<h2 id='upbitwebsocket-generate_payload-payload-generate'>UpbitWebSocket.generate_payload (Payload Generate)</h2>
+<p><strong>staticmethod</strong>
+웹 소켓 수신에 필요한 payload 데이터를 json 포맷 형식의 문자열로 generate 합니다.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+
+<span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="s">'KRW-BTC'</span><span class="p">,</span> <span class="s">'KRW-ETH'</span><span class="p">,</span> <span class="s">'KRW-BCH'</span><span class="p">,</span> <span class="s">'KRW-XRP'</span><span class="p">]</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">codes</span><span class="p">))]</span>
+
+<span class="n">ord_codes</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">.</span><span class="n">generate_orderbook_codes</span><span class="p">(</span>
+    <span class="n">currencies</span><span class="o">=</span><span class="n">codes</span><span class="p">,</span>
+    <span class="n">counts</span><span class="o">=</span><span class="n">counts</span>
+<span class="p">)</span>
+
+<span class="n">trade</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">.</span><span class="n">generate_type_field</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s">'trade'</span><span class="p">,</span>
+    <span class="n">codes</span><span class="o">=</span><span class="n">codes</span>
+<span class="p">)</span>
+<span class="n">orderbook</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">.</span><span class="n">generate_type_field</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s">'orderbook'</span><span class="p">,</span>
+    <span class="n">codes</span><span class="o">=</span><span class="n">ord_codes</span>
+<span class="p">)</span>
+
+<span class="n">type_fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">trade</span><span class="p">,</span> <span class="n">orderbook</span><span class="p">]</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">.</span><span class="n">generate_payload</span><span class="p">(</span>
+    <span class="n">type_fields</span><span class="o">=</span><span class="n">type_fields</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s">'SIMPLE'</span>
+<span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ticket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43552c23-6596-478d-8f71-b8289779a996"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"KRW-BTC"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-ETH"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-BCH"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-XRP"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orderbook"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"codes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"KRW-BTC.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-ETH.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-BCH.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"KRW-XRP.1"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SIMPLE"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='upbitwebsocket-generate_payload-type_fields-ticket-none-format-39-default-39'>UpbitWebSocket.generate_payload(type_fields, ticket=None, format=&#39;DEFAULT&#39;)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type_fields *</td>
+<td>Type Fields</td>
+</tr>
+<tr>
+<td>ticket</td>
+<td>식별값 (기본값은 <code>uuid4</code> 형식으로 생성)</td>
+</tr>
+<tr>
+<td>format</td>
+<td>포맷, <code>SIMPLE</code>: 간소화된 필드명, <code>DEFAULT</code>: 기본 포맷 (생략 가능)</td>
+</tr>
+</tbody></table>
+<h2 id='8240d4d69a'>웹 소켓으로 시세 정보 요청하기</h2>
+<p>웹 소켓을 통해 시세 정보를 요청합니다.</p>
+
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="kn">from</span> <span class="nn">upbit.websocket</span> <span class="kn">import</span> <span class="n">UpbitWebSocket</span>
+
+
+<span class="c1"># Definition async function
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">ticker</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">sock</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+            <span class="n">recv</span> <span class="o">=</span> <span class="k">await</span> <span class="n">conn</span><span class="p">.</span><span class="n">recv</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">recv</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+
+<span class="n">sock</span> <span class="o">=</span> <span class="n">UpbitWebSocket</span><span class="p">()</span>
+
+<span class="n">currencies</span> <span class="o">=</span> <span class="p">[</span><span class="s">'KRW-BTC'</span><span class="p">,</span> <span class="s">'KRW-ETH'</span><span class="p">]</span>
+<span class="n">type_field</span> <span class="o">=</span> <span class="n">sock</span><span class="p">.</span><span class="n">generate_type_field</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s">'ticker'</span><span class="p">,</span>
+    <span class="n">codes</span><span class="o">=</span><span class="n">currencies</span>
+<span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="n">sock</span><span class="p">.</span><span class="n">generate_payload</span><span class="p">(</span>
+    <span class="n">type_fields</span><span class="o">=</span><span class="p">[</span><span class="n">type_field</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">event_loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+<span class="n">event_loop</span><span class="p">.</span><span class="n">run_until_complete</span><span class="p">(</span> <span class="n">ticker</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span> <span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ticker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW-BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"opening_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">36408000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">38161000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">35907000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">36784000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_closing_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">36408000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">466420626861.1874</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RISE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">376000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signed_change_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">376000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0103274006</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signed_change_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0103274006</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ask_bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BID"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.004996</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">12633.27063535</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20210201"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192943"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612207783000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_ask_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">6355.28646728</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_bid_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">6277.98416807</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"highest_52_week_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">48550000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"highest_52_week_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lowest_52_week_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">5489000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lowest_52_week_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-13"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market_state_for_ios"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_trading_suspended"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"delisting_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market_warning"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612207783496</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_price_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">503390500539.5724</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_volume_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">13650.71883738</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stream_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SNAPSHOT"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ticker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRW-ETH"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"opening_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1444000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1509500.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1413000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1444000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"prev_closing_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1444000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">331846956832.1946</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EVEN"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signed_change_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"signed_change_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ask_bid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASK"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">229202.315562</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20210201"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192925"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612207765000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_ask_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">126760.03539062</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_bid_volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">102442.28017138</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"highest_52_week_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1626000.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"highest_52_week_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-25"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lowest_52_week_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">124350.0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lowest_52_week_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-13"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trade_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ACTIVE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market_state_for_ios"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_trading_suspended"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"delisting_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"market_warning"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1612207765752</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_price_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">354570292652.8257</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acc_trade_volume_24h"</span><span class="p">:</span><span class="w"> </span><span class="mf">244893.27187195</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stream_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SNAPSHOT"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
+</span><span class="err">...</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>payload</td>
+<td>포맷에 맞춰진 요청 데이터</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<p><strong>현재가(Ticker) 응답</strong></p>
+
+<table><thead>
+<tr>
+<th>필드명</th>
+<th>축약형 (format: SIMPLE)</th>
+<th>내용</th>
+<th>타입</th>
+<th>값</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>ty</td>
+<td>타입</td>
+<td>String</td>
+<td><code>ticker</code> : 현재가</td>
+</tr>
+<tr>
+<td>code</td>
+<td>cd</td>
+<td>마켓 코드 (ex. KRW-BTC)</td>
+<td>String</td>
+<td>-</td>
+</tr>
+<tr>
+<td>opening_price</td>
+<td>op</td>
+<td>시가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>high_price</td>
+<td>hp</td>
+<td>고가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>low_price</td>
+<td>lp</td>
+<td>저가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trade_price</td>
+<td>tp</td>
+<td>현재가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>prev_closing_price</td>
+<td>pcp</td>
+<td>전일 종가</td>
+<td>Double</td>
+<td></td>
+</tr>
+<tr>
+<td>change</td>
+<td>c</td>
+<td>전일 대비</td>
+<td>String</td>
+<td><code>RISE</code>: 상승, <code>EVEN</code>: 보합, <code>FALL</code>: 하락</td>
+</tr>
+<tr>
+<td>change_price</td>
+<td>cp</td>
+<td>부호 없는 전일 대비 값</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>signed_change_price</td>
+<td>scp</td>
+<td>전일 대비 값</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>change_rate</td>
+<td>cr</td>
+<td>부호 없는 전일 대비 등락율</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>signed_change_rate</td>
+<td>scr</td>
+<td>전일 대비 등락율</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trade_volume</td>
+<td>tv</td>
+<td>가장 최근 거래량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>acc_trade_volume</td>
+<td>atv</td>
+<td>누적 거래량(UTC 0시 기준)</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>acc_trade_volume_24h</td>
+<td>atv24h</td>
+<td>24시간 누적 거래량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>acc_trade_price</td>
+<td>atp</td>
+<td>누적 거래대금(UTC 0시 기준)</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>acc_trade_price_24h</td>
+<td>atp24h</td>
+<td>24시간 누적 거래대금</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trade_date</td>
+<td>tdt</td>
+<td>최근 거래 일자(UTC)</td>
+<td>String</td>
+<td><code>yyyyMMdd</code></td>
+</tr>
+<tr>
+<td>trade_time</td>
+<td>ttm</td>
+<td>최근 거래 시각(UTC)</td>
+<td>String</td>
+<td><code>HHmmss</code></td>
+</tr>
+<tr>
+<td>trade_timestamp</td>
+<td>ttms</td>
+<td>체결 타임스탬프 (milliseconds)</td>
+<td>Long</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ask_bid</td>
+<td>ab</td>
+<td>매수/매도 구분</td>
+<td>String</td>
+<td><code>ASK</code>: 매도, <code>BID</code>: 매수</td>
+</tr>
+<tr>
+<td>acc_ask_volume</td>
+<td>aav</td>
+<td>누적 매도량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>acc_bid_volume</td>
+<td>abv</td>
+<td>누적 매수량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>highest_52_week_price</td>
+<td>h52wp</td>
+<td>52주 최고가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>highest_52_week_date</td>
+<td>h52wdt</td>
+<td>52주 최고가 달성일</td>
+<td>String</td>
+<td><code>yyyy-MM-dd</code></td>
+</tr>
+<tr>
+<td>lowest_52_week_price</td>
+<td>l52wp</td>
+<td>52주 최저가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>lowest_52_week_date</td>
+<td>l52wdt</td>
+<td>52주 최저가 달성일</td>
+<td>String</td>
+<td><code>yyyy-MM-dd</code></td>
+</tr>
+<tr>
+<td>trade_status</td>
+<td>ts</td>
+<td>거래상태 *deprecated</td>
+<td>String</td>
+<td>-</td>
+</tr>
+<tr>
+<td>market_state</td>
+<td>ms</td>
+<td>거래상태</td>
+<td>String</td>
+<td><code>PREVIEW</code>: 입금지원, <code>ACTIVE</code>: 거래지원가능, <code>DELISTED</code> : 거래지원종료</td>
+</tr>
+<tr>
+<td>market_state_for_ios</td>
+<td>msfi</td>
+<td>거래 상태 *deprecated</td>
+<td>String</td>
+<td>-</td>
+</tr>
+<tr>
+<td>is_trading_suspended</td>
+<td>its</td>
+<td>거래 정지 여부</td>
+<td>Boolean</td>
+<td>-</td>
+</tr>
+<tr>
+<td>delisting_date</td>
+<td>dd</td>
+<td>상장폐지일</td>
+<td>Date</td>
+<td>-</td>
+</tr>
+<tr>
+<td>market_warning</td>
+<td>mw</td>
+<td>유의 종목 여부</td>
+<td>String</td>
+<td><code>NONE</code>: 해당없음, <code>CAUTION</code>: 투자유의</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>tms</td>
+<td>타임스탬프 (milliseconds)</td>
+<td>Long</td>
+<td>-</td>
+</tr>
+<tr>
+<td>stream_type</td>
+<td>st</td>
+<td>스트림 타입</td>
+<td>String</td>
+<td><code>SNAPSHOT</code>: 스냅샷, <code>REALTIME</code>: 실시간</td>
+</tr>
+</tbody></table>
+
+<p><strong>체결(Trade) 응답</strong></p>
+
+<table><thead>
+<tr>
+<th>필드명</th>
+<th>축약형 (format: SIMPLE)</th>
+<th>내용</th>
+<th>타입</th>
+<th>값</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>ty</td>
+<td>타입</td>
+<td>String</td>
+<td><code>trade</code>: 체결</td>
+</tr>
+<tr>
+<td>code</td>
+<td>cd</td>
+<td>마켓 코드 (ex. KRW-BTC)</td>
+<td>String</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trade_price</td>
+<td>tp</td>
+<td>체결 가격</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trade_volume</td>
+<td>tv</td>
+<td>체결량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ask_bid</td>
+<td>ab</td>
+<td>매수/매도 구분</td>
+<td>String</td>
+<td><code>ASK</code>: 매도, <code>BID</code>: 매수</td>
+</tr>
+<tr>
+<td>prev_closing_price</td>
+<td>pcp</td>
+<td>전일 종가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>change</td>
+<td>c</td>
+<td>전일 대비</td>
+<td>String</td>
+<td><code>RISE</code> : 상승, <code>EVEN</code> : 보합, <code>FALL</code> : 하락</td>
+</tr>
+<tr>
+<td>change_price</td>
+<td>cp</td>
+<td>부호 없는 전일 대비 값</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>trade_date</td>
+<td>td</td>
+<td>체결 일자(UTC 기준)</td>
+<td>String</td>
+<td><code>yyyy-MM-dd</code></td>
+</tr>
+<tr>
+<td>trade_time</td>
+<td>ttm</td>
+<td>체결 시각(UTC 기준)</td>
+<td>String</td>
+<td><code>HH:mm:ss</code></td>
+</tr>
+<tr>
+<td>trade_timestamp</td>
+<td>ttms</td>
+<td>체결 타임스탬프 (millisecond)</td>
+<td>Long</td>
+<td>-</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>tms</td>
+<td>타임스탬프 (millisecond)</td>
+<td>Long</td>
+<td>-</td>
+</tr>
+<tr>
+<td>sequential_id</td>
+<td>sid</td>
+<td>체결 번호 (Unique)</td>
+<td>Long</td>
+<td>-</td>
+</tr>
+<tr>
+<td>stream_type</td>
+<td>st</td>
+<td>스트림 타입</td>
+<td>String</td>
+<td><code>SNAPSHOT</code>: 스냅샷, <code>REALTIME</code>: 실시간</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+    <code>sequential_id</code> 필드는 체결의 유일성 판단을 위한 근거로 쓰일 수 있습니다.
+    <br/>
+    하지만 체결의 순서를 보장하지는 못합니다.
+</aside>
+
+<p><strong>호가(Orderbook) 응답</strong></p>
+
+<table><thead>
+<tr>
+<th>필드명</th>
+<th>축약형 (format: SIMPLE)</th>
+<th>내용</th>
+<th>타입</th>
+<th>값</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>ty</td>
+<td>타입</td>
+<td>String</td>
+<td><code>orderbook</code>: 호가</td>
+</tr>
+<tr>
+<td>code</td>
+<td>cd</td>
+<td>마켓 코드 (ex. KRW-BTC)</td>
+<td>String</td>
+<td>-</td>
+</tr>
+<tr>
+<td>total_ask_size</td>
+<td>tas</td>
+<td>호가 매도 총 잔량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>total_bid_size</td>
+<td>tbs</td>
+<td>호가 매수 총 잔량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>orderbook_units</td>
+<td>obu</td>
+<td>호가</td>
+<td>List of Objects</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ask_price</td>
+<td>ap</td>
+<td>매도 호가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>bid_price</td>
+<td>bp</td>
+<td>매수 호가</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ask_size</td>
+<td>as</td>
+<td>매도 잔량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>bid_size</td>
+<td>bs</td>
+<td>매수 잔량</td>
+<td>Double</td>
+<td>-</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>tms</td>
+<td>타임스탬프 (millisecond)</td>
+<td>Long</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h1 id='utils'>Utils (유틸리티 모듈)</h1><h2 id='validator'>Validator</h2><h3 id='validate_price-price'>validate_price(price) 원화 마켓 주문 가격 단위</h3>
+<blockquote>
+<p>Example Code</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upbit.utils</span> <span class="kn">import</span> <span class="n">Validator</span>
+
+<span class="n">price</span> <span class="o">=</span> <span class="mi">20007</span>
+<span class="n">valid</span> <span class="o">=</span> <span class="n">Validator</span><span class="p">.</span><span class="n">validate_price</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">valid</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Result Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="mf">20000.0</span>
+</code></pre></div>
+<p>원화 마켓은 호가 별 주문 가격의 단위가 다릅니다. 아래 표를 참고하여 해당 단위로 주문하여 주세요.</p>
+
+<table><thead>
+<tr>
+<th>최소 호가 (이상)</th>
+<th>최대 호가 (미만)</th>
+<th>주문 가격 단위 (원)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2,000,000</td>
+<td></td>
+<td>1,000</td>
+</tr>
+<tr>
+<td>1,000,000</td>
+<td>2,000,000</td>
+<td>500</td>
+</tr>
+<tr>
+<td>500,000</td>
+<td>1,000,000</td>
+<td>100</td>
+</tr>
+<tr>
+<td>100,000</td>
+<td>500,000</td>
+<td>50</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>100,000</td>
+<td>10</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td>10,000</td>
+<td>5</td>
+</tr>
+<tr>
+<td>100</td>
+<td>1,000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>100</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>10</td>
+<td>0.01</td>
+</tr>
+</tbody></table>
+
+<p>예를 들어, 호가가 <code>20,000원</code> 일 경우 <code>19,950원</code>, <code>20,000원</code>, <code>20,050원</code> 으로 주문을 넣을 수 있으며,
+<code>20,007원</code>, <code>20,105원</code> 등의 가격으로는 주문이 불가능 합니다.</p>
+<h3 id='validate_price-price-2'>validate_price(price)</h3>
+<p><strong>staticmethod</strong></p>
+
+<p>가격에 대한 값을 가격 단위에 맞춰 반환합니다.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>price *</td>
+<td>가격</td>
+</tr>
+</tbody></table>
+<h3 id='result'>result</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>validated_price</td>
+<td>가격 단위에 맞춰진 가격</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <blockquote>
 <p>Response Example</p>
@@ -4444,7 +5779,26 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<blockquote>
+<p>Exception Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">HTTPError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Do Something ..
+</span><span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># Do Something ..
+</span><span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># Do Something ..
+</span></code></pre></div>
+<blockquote>
+<p>Exception Result Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight console tab-console"><code><span class="go">HTTPError: 429 Client Error: Too Many Requests for url: https://api.upbit.com/v1/~
+</span></code></pre></div>
 <p>API 요청값이 유효하지 않거나 처리 중 오류가 발생한 경우, HTTP 상태 코드와 함께 다음과 같은 형태의 JSON body가 리턴됩니다.</p>
+
+<p>만약 요청에 실패할 경우, 다음과 같은 예외를 발생시킵니다.</p>
 <h3 id='400-bad-request'>400 Bad Request</h3>
 <p>400 에러는 주로 파라미터 요청 값이 잘못된 경우가 많습니다. 본 문서를 참고하여 올바른 파라미터를 확인해주세요.</p>
 

@@ -1,4 +1,4 @@
-<h1 id='upbitclient-upbit'>UpbitClient (Upbit 클라이언트 사용하기)</h1>
+<h1 id='upbitclient-upbit'>UpbitClient (Upbit 클라이언트 사용하기)</h1><h3 id='4d259256d6'>클라이언트 객체 생성</h3>
 <blockquote>
 <p>Code Example</p>
 </blockquote>
@@ -11,13 +11,13 @@
 <span class="k">print</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
-<p>Result Example</p>
+<p>Result</p>
 </blockquote>
-<div class="highlight"><pre class="highlight console tab-console"><code><span class="go">UpbitClient(https://api.upbit.com/v1)
-</span></code></pre></div>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">UpbitClient</span><span class="p">(</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="p">.</span><span class="n">upbit</span><span class="p">.</span><span class="n">com</span><span class="p">)</span>
+</code></pre></div>
 <p>설치가 완료되면 <code>from upbit.client import Upbit</code>로 패키지를 import 합니다.
 그 다음 <code>UpbitClient</code> 객체를 생성하면 클라이언트를 사용할 준비가 완료됩니다.</p>
-
+<h3 id='upbitclient-access_key-secret_key-kwargs'>UpbitClient(access_key, secret_key, **kwargs)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -39,5 +39,27 @@
 <tr>
 <td>config</td>
 <td>Swagger Client Configuration</td>
+</tr>
+</tbody></table>
+<h3 id='71d855acd9'>결과</h3>
+<p>모든 요청에 대한 결과는 JSON 포맷으로 반환됩니다.</p>
+
+<p>남은 요청 제한 시간에 대한 <code>remaining_request</code>와 응답 결과 <code>result</code>의 키(key) 값을 가집니다.</p>
+
+<p>요청 제한에 대한 부분은 <code>Remaining Requests (요청 수 제한)</code> 섹션에서 다룹니다.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>remaining_request</td>
+<td>남은 요청 제한 시간</td>
+</tr>
+<tr>
+<td>result</td>
+<td>요청에 대한 결과</td>
 </tr>
 </tbody></table>
