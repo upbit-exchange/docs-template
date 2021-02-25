@@ -122,6 +122,36 @@ async with connection as conn:
     pass
 ```
 
+## socket.connect
+**Method**
+
+URI에 연결을 시도하고 Connection 객체를 재생성합니다.
+
+`UpbitWebSocket` 클래스의 `__init__` 메소드 호출 시 자동으로 호출됩니다.
+
+> Example Code
+
+```python
+from upbit.websocket import UpbitWebSocket
+
+sock = UpbitWebSocket()
+sock.connect(
+    ping_interval=20,
+    ping_timeout=20
+)
+
+async with sock as conn:
+    # Do Something
+    pass
+```
+
+### socket.connect(ping_interval=None, ping_timeout=None)
+
+Parameter      | Description
+-------------- | --------------------
+ping_interval  | ping 간격 제한 (기본값: `None`)
+ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
+
 
 ## conn.send
 웹 소켓에 데이터를 수신합니다.
