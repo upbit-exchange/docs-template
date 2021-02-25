@@ -87,10 +87,17 @@ format | 포맷 (`SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본값(생략 �
 from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
+print(sock)
 
 async with sock as conn:
     # Do something
     pass
+```
+
+> Result Example
+
+```python
+UpbitWebSocket(wss://api.upbit.com/websocket/v1)
 ```
 
 ### UpbitWebSocket(uri=WEBSOCKET_URI, ping_interval=None, ping_timeout=None)
