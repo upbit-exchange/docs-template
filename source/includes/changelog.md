@@ -3,7 +3,7 @@
 ## 2021
 
 ### 2021-02-26
-Update Client Released: v1.1.7.4
+Update Client Released: v1.1.7.5
 
 - `UpbitWebSocket` 클래스 파라미터 오타 수정 `ping_inverval` -> `ping_interval`
 - `UpbitWebSocket` 클래스 기능 추가: `sock.connect` 섹션 참고
