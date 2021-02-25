@@ -2,6 +2,14 @@
 
 ## 2021
 
+### 2021-02-26
+Update Client Released: v1.1.7.5
+
+- `UpbitWebSocket` 클래스 파라미터 오타 수정 `ping_inverval` -> `ping_interval`
+- `UpbitWebSocket` 클래스 기능 추가: `socket.connect` 섹션 참고
+- 이전보다 원활한 패키지 버전 관리를 위해 `pkginfo.py` 모듈로 분리
+- 그 외 부분적인 소스 코드 리팩토링
+
 ### 2021-02-23
 Update Client Released: v1.1.7.3
 

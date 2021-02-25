@@ -87,10 +87,17 @@ format | 포맷 (`SIMPLE`: 간소화된 필드명, `DEFAULT`: 기본값(생략 �
 from upbit.websocket import UpbitWebSocket
 
 sock = UpbitWebSocket()
+print(sock)
 
 async with sock as conn:
     # Do something
     pass
+```
+
+> Result Example
+
+```python
+UpbitWebSocket(wss://api.upbit.com/websocket/v1)
 ```
 
 ### UpbitWebSocket(uri=WEBSOCKET_URI, ping_interval=None, ping_timeout=None)
@@ -122,6 +129,36 @@ async with connection as conn:
     pass
 ```
 
+## socket.connect
+**Method**
+
+URI에 연결을 시도하고 Connection 객체를 재생성합니다.
+
+`UpbitWebSocket` 클래스의 `__init__` 메소드 호출 시 자동으로 호출됩니다.
+
+> Example Code
+
+```python
+from upbit.websocket import UpbitWebSocket
+
+sock = UpbitWebSocket()
+sock.connect(
+    ping_interval=20,
+    ping_timeout=20
+)
+
+async with sock as conn:
+    # Do Something
+    pass
+```
+
+### socket.connect(ping_interval=None, ping_timeout=None)
+
+Parameter      | Description
+-------------- | --------------------
+ping_interval  | ping 간격 제한 (기본값: `None`)
+ping_timeout   | ping 시간 초과 제한 (기본값: `None`)
+
 
 ## conn.send
 웹 소켓에 데이터를 수신합니다.
@@ -146,6 +183,11 @@ message *      | 서버에 수신할 데이터
 
 ## conn.recv
 서버로부터 전달받은 바이트 스트림(bytes stream) 데이터를 받습니다.
+
+예외를 발생시키는 경우는 아래와 같습니다.
+
+- ConnectionClosed: `Connection` 객체가 `Close` 상태가 되었을 경우
+- RuntimeError: 두 가지 코루틴이 동시에 `recv` 를 호출하는 경우
 
 > Example Code
 
@@ -190,6 +232,7 @@ No Parameters
 from upbit.websocket import UpbitWebSocket
 
 currencies = ['KRW-BTC', 'KRW-ETH']
+
 type_field = UpbitWebSocket.generate_type_field(
     type="trade",
     codes=currencies
@@ -229,9 +272,10 @@ from upbit.websocket import UpbitWebSocket
 
 currencies = ['KRW-BTC', 'KRW-ETH']
 counts = [5, 5]
+
 codes = UpbitWebSocket.generate_orderbook_codes(
-    currencies,
-    counts
+    currencies=currencies,
+    counts=counts
 )
 print(codes)
 ```
@@ -252,6 +296,7 @@ counts         | 수신할 각 시세 종목에 대한 개수
 
 ## UpbitWebSocket.generate_payload (Payload Generate)
 **staticmethod**
+
 웹 소켓 수신에 필요한 payload 데이터를 json 포맷 형식의 문자열로 generate 합니다.
 
 > Example Code
