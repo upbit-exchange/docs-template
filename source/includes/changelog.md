@@ -5,7 +5,7 @@
 ### 2021-02-26
 Update Client Released: v1.1.7.5
 
-- `UpbitWebSocket` 클래스 파라미터 오타 수정 `ping_inverval` -> `ping_interval`
+- `UpbitWebSocket` 클래스 파라미터 오타 수정: `ping_inverval` -> `ping_interval`
 - `UpbitWebSocket` 클래스 기능 추가: `socket.connect` 섹션 참고
 - 이전보다 원활한 패키지 버전 관리를 위해 `pkginfo.py` 모듈로 분리
 - 그 외 부분적인 소스 코드 리팩토링
@@ -50,6 +50,7 @@ Update Client Released: v1.1.6.23
 ### 2021-01-22
 Update Upbit OPEN API
 
+- Upbit OPEN API가 업데이트 됨에 따라 아래와 같이 변경되었습니다.
 - 주문 리스트 조회 (**GET** /v1/orders): `kind` 요청 파라미터 제거
 - 변경 결과: `normal` (일반 주문), `watch` (예약 주문) 동시 조회
 
