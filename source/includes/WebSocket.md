@@ -186,8 +186,8 @@ message *      | 서버에 수신할 데이터
 
 예외를 발생시키는 경우는 아래와 같습니다.
 
-- ConnectionClosed: `Connection` 객체가 `Close` 상태가 되었을 경우
-- RuntimeError: 두 가지 코루틴이 동시에 `recv` 를 호출하는 경우
+- **ConnectionClosed**: `Connection` 객체가 `Close` 상태가 되었을 경우
+- **RuntimeError**: 두 가지 코루틴이 동시에 `recv` 를 호출하는 경우
 
 > Example Code
 
