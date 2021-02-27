@@ -50,6 +50,7 @@ Update Client Released: v1.1.6.23
 ### 2021-01-22
 Update Upbit OPEN API
 
+- Upbit OPEN API가 업데이트 됨에 따라 아래와 같이 변경되었습니다.
 - 주문 리스트 조회 (**GET** /v1/orders): `kind` 요청 파라미터 제거
 - 변경 결과: `normal` (일반 주문), `watch` (예약 주문) 동시 조회
 
