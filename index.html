@@ -334,6 +334,9 @@
             <a href="#intro" class="toc-h1 toc-link" data-title="Intro (개요)">Intro (개요)</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#what-is-this" class="toc-h2 toc-link" data-title="What is This?">What is This?</a>
+                  </li>
+                  <li>
                     <a href="#support" class="toc-h2 toc-link" data-title="Support">Support</a>
                   </li>
               </ul>
@@ -555,7 +558,12 @@
 
 <p><strong>Upbit OPEN API Client 사용법과 설명에 대한 문서입니다.</strong></p>
 
-<p><a href="https://github.com/uJhin/upbit-client/releases">
+<p><a href="https://github.com/uJhin/upbit-client">
+  <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social">
+  <img src="https://img.shields.io/github/forks/uJhin/upbit-client?style=social">
+</a>
+<br/>
+<a href="https://github.com/uJhin/upbit-client/releases">
   <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
 </a>
 <a href="https://github.com/uJhin/upbit-client/blob/main/LICENSE">
@@ -602,19 +610,19 @@
   </li>
   <li>
     <b>
-      Author Email: <code>ujhin942@gmail.com</code>
+      <img src="images/email-9fadb5be.png"> Author Email: <code>ujhin942@gmail.com</code>
     </b>
   </li>
   <li>
     <a href="https://docs.upbit.com/docs/">
       <b>
-        <img src="images/favicon-78be1dcf.ico"/> Official OPEN API
+        <img src="images/upbit_favicon-26126a0a.png"/> Official OPEN API
       </b>
     </a>
   </li>
   <li>
     <b>
-      <img src="images/favicon-78be1dcf.ico"/> Official Support: <code>open-api@upbit.com</code>
+      <img src="images/upbit_favicon-26126a0a.png"/> Official Support: <code>open-api@upbit.com</code>
     </b>
   </li>
 </ul>
@@ -627,7 +635,7 @@
 <p>Update Client Released: v1.1.7.5</p>
 
 <ul>
-<li><code>UpbitWebSocket</code> 클래스 파라미터 오타 수정 <code>ping_inverval</code> -&gt; <code>ping_interval</code></li>
+<li><code>UpbitWebSocket</code> 클래스 파라미터 오타 수정: <code>ping_inverval</code> -&gt; <code>ping_interval</code></li>
 <li><code>UpbitWebSocket</code> 클래스 기능 추가: <code>socket.connect</code> 섹션 참고</li>
 <li>이전보다 원활한 패키지 버전 관리를 위해 <code>pkginfo.py</code> 모듈로 분리</li>
 <li>그 외 부분적인 소스 코드 리팩토링</li>
@@ -679,6 +687,7 @@
 <p>Update Upbit OPEN API</p>
 
 <ul>
+<li>Upbit OPEN API가 업데이트 됨에 따라 아래와 같이 변경되었습니다.</li>
 <li>주문 리스트 조회 (<strong>GET</strong> /v1/orders): <code>kind</code> 요청 파라미터 제거</li>
 <li>변경 결과: <code>normal</code> (일반 주문), <code>watch</code> (예약 주문) 동시 조회</li>
 </ul>
@@ -724,14 +733,26 @@
 <ul>
 <li>Upbit OPEN API 버전이 1.1.6로 업데이트 되어 최신 버전에 맞춰 구현 및 배포</li>
 </ul>
-<h1 id='intro'>Intro (개요)</h1>
+<h1 id='intro'>Intro (개요)</h1><h3 id='what-is-this'>What is This?</h3>
 <p><strong>Upbit(업비트) Cryptocurrency Exchange Open API Client of Multi-Programming Language Support</strong></p>
 
-<p>Upbit Client(업비트 클라이언트)는 업비트 OPEN API에 접근할 수 있는 인터페이스를 제공합니다.</p>
+<p>Upbit Client(업비트 클라이언트)는 Upbit(업비트) OPEN API에 접근할 수 있는 인터페이스를 제공합니다.</p>
 <h3 id='support'>Support</h3>
 <ul>
-<li><a href="https://docs.upbit.com/">Official Upbit OPEN API Documents</a></li>
-<li><a href="https://github.com/swagger-api">Swagger</a></li>
+  <li>
+    <b>
+      <a href="https://upbit.com/">
+        <img src="images/upbit_favicon-26126a0a.png"> Upbit
+      </a>
+    </b>
+  </li>
+  <li>
+    <b>
+      <a href="https://github.com/swagger-api/">
+        <img src="images/swagger_favicon-189a69a7.png"> Swagger
+      </a>
+    </b>
+  </li>
 </ul>
 <h1 id='install'>Install (설치)</h1>
 <blockquote>
@@ -5758,7 +5779,7 @@ Signature 생성시 secret encoding 옵션을 확인해주세요. <b>발급된 <
 </thead><tbody>
 <tr>
 <td>2,000,000</td>
-<td></td>
+<td>-</td>
 <td>1,000</td>
 </tr>
 <tr>
