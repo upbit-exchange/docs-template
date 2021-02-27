@@ -4,6 +4,11 @@
 
 **Upbit OPEN API Client 사용법과 설명에 대한 문서입니다.**
 
+<a href="https://github.com/uJhin/upbit-client">
+  <img src="https://img.shields.io/github/stars/uJhin/upbit-client?style=social">
+  <img src="https://img.shields.io/github/forks/uJhin/upbit-client?style=social">
+</a>
+<br/>
 <a href="https://github.com/uJhin/upbit-client/releases">
   <img src="https://img.shields.io/github/v/release/uJhin/upbit-client"/>
 </a>
@@ -53,19 +58,19 @@
   </li>
   <li>
     <b>
-      Author Email: <code>ujhin942@gmail.com</code>
+      <img src="/images/email.ico"> Author Email: <code>ujhin942@gmail.com</code>
     </b>
   </li>
   <li>
     <a href="https://docs.upbit.com/docs/">
       <b>
-        <img src="/images/favicon.ico"/> Official OPEN API
+        <img src="/images/upbit-favicon.png"/> Official OPEN API
       </b>
     </a>
   </li>
   <li>
     <b>
-      <img src="/images/favicon.ico"/> Official Support: <code>open-api@upbit.com</code>
+      <img src="/images/upbit-favicon.png"/> Official Support: <code>open-api@upbit.com</code>
     </b>
   </li>
 </ul>
