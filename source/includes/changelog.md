@@ -7,6 +7,7 @@ Update Client Released: v1.1.7.6
 
 - 전체적인 소스 코드 리팩토링
 - `models.py` 내부 클래스들의 Docstring 파라미터 타입 수정
+- 약간의 성능 개선
 
 ### 2021-02-26
 Update Client Released: v1.1.7.5
